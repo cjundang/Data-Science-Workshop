@@ -300,17 +300,20 @@ function doPost(e) {
   ```bash
   curl -X POST \
   -H "Content-Type: application/json" \
-  -d '{"City": "Bangkok","Temperature (C): "29.58", "Humidity (%)": "76", "Description": "light rain"}' \
-  "https://script.google.com/macros/s/AKfycbysX7pzUoonuNAHdxa5evl6MP-NV6pnI_kAAYlm_bqdT-E0QfWkHV05wtKOPrYkdib9mQ/exec"
+  -d '{"City": "Bangkok","Temperature (C)": "29.58", "Humidity (%)": "76", "Description": "light rain"}' \
+  "https://script.google.com/macros/s/xxxxxxxxx/exec"
   ```
+
 
 **ตัวอย่างการตอบกลับ JSON (GET)**
 
 ```json
-[
-  {"name":"Alice","age":25,"city":"Bangkok"},
-  {"name":"Bob","age":30,"city":"Chiang Mai"}
-]
+[{
+  City: "Bangkok",
+  Temperature (C): 29.58,
+  Humidity (%): 76,
+  Description: "light rain"
+}]
 ```
  
 
@@ -344,9 +347,8 @@ else:
 ✅ ผลลัพธ์จะเป็นข้อมูลจากชีตในรูปแบบ pandas DataFrame เช่น:
 
 ```
-    name   age       city
-0  Alice    25   Bangkok
-1    Bob    30  Chiang Mai
+      City  Temperature (C)  Humidity (%) Description
+0  Bangkok            29.58            76  light rain
 ```
 
 2. POST: เพิ่มข้อมูลใหม่ลงในชีต
@@ -355,13 +357,14 @@ else:
 import requests
 
 # URL ของ Web App
-BASE_URL = "https://script.google.com/macros/s/AKfycbxxxxx/exec"
+BASE_URL = "https://script.google.com/macros/s/xxxxxxxxxxxxx/exec"
 
 # JSON ที่ต้องการเพิ่ม
 new_data = {
-    "name": "Charlie",
-    "age": 28,
-    "city": "Phuket"
+    "City": "NST",
+    "Temperature (C)": 28,
+    "Humidity (%)": "99.0",
+    "Description": "Big Rain"
 }
 
 # ส่ง POST
