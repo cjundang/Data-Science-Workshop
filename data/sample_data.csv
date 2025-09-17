@@ -1,0 +1,21 @@
+City,Temperature_C,Humidity_%,Weather,Wind_Speed_kmh
+Bangkok,27.9,65,Rainy,16.5
+Chiang Mai,27.6,85,Sunny,7.6
+Phuket,24.6,64,Sunny,18.5
+Pattaya,25.0,51,Rainy,13.0
+Khon Kaen,25.3,53,Partly Cloudy,11.1
+Hat Yai,28.1,66,Rainy,10.0
+Nakhon Ratchasima,29.9,79,Thunderstorm,23.9
+Udon Thani,28.7,86,Rainy,20.8
+Surat Thani,24.7,53,Rainy,16.9
+Chiang Rai,26.9,77,Thunderstorm,5.4
+Samut Prakan,31.6,78,Rainy,5.9
+Nakhon Si Thammarat,27.8,82,Partly Cloudy,6.5
+Rayong,34.1,76,Sunny,5.3
+Krabi,26.9,55,Thunderstorm,20.1
+Lampang,33.4,69,Partly Cloudy,23.8
+Trang,29.1,79,Sunny,9.7
+Sukhothai,35.6,69,Rainy,6.1
+Ubon Ratchathani,28.7,85,Rainy,18.9
+Chachoengsao,31.7,57,Sunny,21.6
+Ayutthaya,29.3,67,Rainy,10.1
