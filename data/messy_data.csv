@@ -1,0 +1,1001 @@
+ID,Name,Age,City,Salary,Department,JoinDate,Comments
+1,Alice,31.0,Chiang Mai,62000.0,Finance,2020-08-15,good employee!!
+2,Bob,30.0,Chiang Mai,48000.0,Finance,2020-08-15,Needs improvement
+3,Charlie,,Chiang Mai,59000.0,IT,2020-08-15,average
+4,David,40.0,Chiang Mai,48000.0,HR,2020-12-01,good team player
+5,Charlie,36.0,,55000.0,Finance,2020-12-01,good employee!!
+6,Bob,36.0,Phuket,55000.0,IT,2019-03-20,good team player
+7,Alice,38.0,Bangkok,,IT,2021-07-01,
+8,David,40.0,Bangkok,50000.0,IT,2019-03-20,Very Dedicated...
+9,David,25.0,,55000.0,HR,2020-08-15,
+10,Charlie,25.0,Phuket,52000.0,IT,2020-01-15,
+11,Charlie,38.0,Bangkok,60000.0,HR,2019-03-20,
+12,Alice,31.0,Bangkok,51000.0,HR,2020-08-15,average
+13,Charlie,36.0,Phuket,,HR,2020-01-15,None
+14,David,28.0,,51000.0,HR,2021-07-01,good EMPLOYEE!!
+15,Charlie,28.0,,51000.0,Finance,2020-01-15,hard Working
+16,Bob,25.0,Chiang Mai,52000.0,Finance,2021-07-01,None
+17,Eve,,Phuket,55000.0,HR,2020-01-15,None
+18,Bob,,Phuket,55000.0,IT,2020-12-01,Excellent work
+19,Eve,40.0,Chiang Mai,60000.0,HR,2020-12-01,average
+20,Eve,,,55000.0,IT,2021-07-01,good team player
+21,Charlie,,Phuket,50000.0,IT,2020-08-15,Excellent Work
+22,Charlie,40.0,,,Finance,2020-01-15,good team player
+23,Bob,38.0,,48000.0,IT,2020-12-01,Hard working
+24,Bob,36.0,Chiang Mai,59000.0,IT,2020-12-01,Excellent Work
+25,Alice,31.0,,59000.0,IT,2021-07-01,Excellent work
+26,Alice,36.0,Chiang Mai,50000.0,Finance,2020-01-15,good team player
+27,Eve,38.0,Bangkok,47000.0,IT,2020-01-15,Excellent work
+28,Charlie,29.0,Phuket,51000.0,Finance,2019-03-20,None
+29,Eve,29.0,Bangkok,50000.0,IT,2020-01-15,Excellent Work
+30,Charlie,45.0,Bangkok,60000.0,IT,2020-01-15,Very Dedicated...
+31,Alice,36.0,Bangkok,62000.0,IT,2020-08-15,good team player
+32,Alice,,,51000.0,Finance,2020-01-15,excellent Work
+33,Charlie,,Bangkok,59000.0,IT,2020-01-15,None
+34,Eve,28.0,Phuket,45000.0,Finance,2019-03-20,Very Dedicated...
+35,David,30.0,Phuket,62000.0,Finance,2020-12-01,excellent Work
+36,Bob,25.0,Bangkok,51000.0,Finance,2020-08-15,None
+37,Bob,38.0,Chiang Mai,59000.0,IT,2020-12-01,None
+38,Charlie,30.0,Chiang Mai,51000.0,Finance,2020-01-15,Hard working
+39,Eve,28.0,,,IT,2020-12-01,good EMPLOYEE!!
+40,David,30.0,,47000.0,Finance,2021-07-01,None
+41,Eve,,Chiang Mai,59000.0,Finance,2019-03-20,needs Improvement
+42,Charlie,45.0,Phuket,59000.0,IT,2020-08-15,Average
+43,Eve,40.0,,51000.0,HR,2020-12-01,Very dedicated...
+44,Charlie,40.0,Chiang Mai,47000.0,Finance,2020-12-01,good team player
+45,Bob,36.0,Chiang Mai,55000.0,HR,2020-01-15,good EMPLOYEE!!
+46,Eve,22.0,,45000.0,IT,2021-07-01,good team player
+47,Eve,40.0,Bangkok,52000.0,Finance,2020-01-15,excellent Work
+48,Charlie,31.0,Phuket,52000.0,IT,2020-08-15,
+49,Eve,30.0,Chiang Mai,55000.0,IT,2020-08-15,needs Improvement
+50,Eve,30.0,Chiang Mai,62000.0,Finance,2020-12-01,good EMPLOYEE!!
+51,David,31.0,Chiang Mai,52000.0,HR,2020-08-15,Excellent work
+52,Alice,40.0,Chiang Mai,59000.0,Finance,2020-08-15,Very Dedicated...
+53,David,45.0,Chiang Mai,45000.0,Finance,2021-07-01,Excellent work
+54,Charlie,30.0,Chiang Mai,60000.0,HR,2020-12-01,Excellent work
+55,Bob,28.0,,,Finance,2020-12-01,good employee!!
+56,Bob,30.0,Chiang Mai,51000.0,Finance,2020-01-15,average
+57,Alice,28.0,Chiang Mai,,Finance,2020-12-01,Needs improvement
+58,Alice,25.0,Phuket,60000.0,Finance,2020-12-01,
+59,Charlie,36.0,Chiang Mai,50000.0,Finance,2020-01-15,Average
+60,Alice,28.0,Chiang Mai,,Finance,2020-01-15,Needs improvement
+61,Eve,31.0,,59000.0,Finance,2019-03-20,
+62,Eve,30.0,Phuket,,HR,2021-07-01,average
+63,David,22.0,Bangkok,51000.0,HR,2020-08-15,Excellent Work
+64,Eve,28.0,Phuket,60000.0,Finance,2019-03-20,Excellent Work
+65,Charlie,40.0,,50000.0,Finance,2021-07-01,Very dedicated...
+66,Eve,22.0,Phuket,62000.0,Finance,2021-07-01,
+67,Charlie,45.0,Bangkok,62000.0,IT,2020-12-01,excellent Work
+68,David,25.0,Bangkok,,HR,2021-07-01,Needs improvement
+69,Charlie,30.0,,48000.0,Finance,2020-08-15,hard Working
+70,Alice,31.0,Phuket,47000.0,IT,2020-01-15,good EMPLOYEE!!
+71,Bob,25.0,Chiang Mai,45000.0,HR,2020-12-01,None
+72,Eve,28.0,,45000.0,IT,2021-07-01,
+73,Alice,22.0,Phuket,48000.0,IT,2020-08-15,None
+74,Bob,45.0,Phuket,59000.0,Finance,2020-01-15,Excellent work
+75,Charlie,40.0,Bangkok,60000.0,HR,2020-01-15,good team player
+76,Eve,,Phuket,48000.0,IT,2019-03-20,Needs improvement
+77,David,45.0,Phuket,45000.0,HR,2021-07-01,good EMPLOYEE!!
+78,Charlie,,Chiang Mai,62000.0,Finance,2021-07-01,excellent Work
+79,Charlie,36.0,Phuket,62000.0,Finance,2020-01-15,Hard working
+80,David,38.0,Phuket,55000.0,Finance,2020-12-01,Good employee!!
+81,Bob,45.0,Chiang Mai,60000.0,Finance,2021-07-01,hard Working
+82,David,40.0,Chiang Mai,52000.0,IT,2020-12-01,None
+83,Charlie,29.0,Phuket,,Finance,2020-12-01,Excellent Work
+84,Bob,22.0,Phuket,60000.0,Finance,2020-01-15,None
+85,Eve,29.0,,52000.0,HR,2020-12-01,Hard working
+86,Charlie,29.0,Chiang Mai,45000.0,IT,2020-08-15,None
+87,David,31.0,Phuket,55000.0,Finance,2020-12-01,Excellent Work
+88,Bob,29.0,,51000.0,Finance,2019-03-20,average
+89,Eve,45.0,,,HR,2019-03-20,Hard working
+90,Charlie,31.0,Bangkok,48000.0,Finance,2021-07-01,Very dedicated...
+91,Eve,25.0,Bangkok,51000.0,Finance,2020-12-01,Hard working
+92,Bob,31.0,Bangkok,45000.0,IT,2020-01-15,Hard working
+93,Eve,40.0,Phuket,60000.0,IT,2020-08-15,good team player
+94,Alice,,,60000.0,IT,2020-12-01,good employee!!
+95,Bob,31.0,Phuket,62000.0,IT,2019-03-20,Needs improvement
+96,Eve,38.0,Bangkok,55000.0,HR,2020-08-15,
+97,Bob,36.0,,47000.0,HR,2019-03-20,needs Improvement
+98,Alice,,Bangkok,48000.0,Finance,2021-07-01,Very Dedicated...
+99,David,36.0,Phuket,47000.0,HR,2019-03-20,Hard working
+100,Charlie,29.0,Phuket,45000.0,Finance,2019-03-20,good employee!!
+101,David,31.0,Bangkok,48000.0,HR,2019-03-20,good EMPLOYEE!!
+102,Alice,30.0,,59000.0,Finance,2019-03-20,good employee!!
+103,Bob,28.0,Chiang Mai,50000.0,IT,2020-12-01,good team player
+104,Charlie,22.0,Bangkok,60000.0,Finance,2020-01-15,good team player
+105,David,31.0,,51000.0,IT,2019-03-20,Good employee!!
+106,David,38.0,,51000.0,HR,2019-03-20,excellent Work
+107,Bob,29.0,,60000.0,Finance,2020-01-15,
+108,Eve,38.0,,45000.0,IT,2019-03-20,average
+109,Bob,30.0,Bangkok,,HR,2019-03-20,excellent Work
+110,Bob,45.0,,48000.0,HR,2021-07-01,
+111,Eve,40.0,,51000.0,IT,2020-12-01,needs Improvement
+112,Charlie,31.0,Bangkok,60000.0,HR,2020-12-01,good team player
+113,David,28.0,Phuket,59000.0,HR,2020-12-01,average
+114,David,30.0,,55000.0,Finance,2021-07-01,hard Working
+115,Alice,22.0,Bangkok,48000.0,IT,2021-07-01,average
+116,Alice,25.0,Bangkok,48000.0,HR,2021-07-01,excellent Work
+117,Bob,40.0,Phuket,62000.0,Finance,2021-07-01,excellent Work
+118,Alice,,Phuket,48000.0,Finance,2020-12-01,hard Working
+119,Bob,28.0,Bangkok,59000.0,Finance,2020-12-01,good EMPLOYEE!!
+120,Eve,25.0,,,IT,2021-07-01,good employee!!
+121,Charlie,30.0,Phuket,,Finance,2020-08-15,Average
+122,David,31.0,,50000.0,Finance,2019-03-20,average
+123,Charlie,31.0,Chiang Mai,62000.0,IT,2020-01-15,Needs improvement
+124,David,36.0,Phuket,52000.0,IT,2020-08-15,Hard working
+125,Charlie,38.0,Bangkok,52000.0,IT,2020-12-01,good employee!!
+126,Bob,45.0,Chiang Mai,55000.0,IT,2021-07-01,None
+127,Eve,28.0,Chiang Mai,52000.0,IT,2020-12-01,
+128,Alice,40.0,Phuket,,IT,2020-01-15,Hard working
+129,Bob,29.0,Phuket,,HR,2021-07-01,None
+130,Alice,22.0,Phuket,,HR,2020-12-01,Excellent work
+131,Charlie,38.0,,62000.0,HR,2021-07-01,Average
+132,Eve,45.0,Phuket,62000.0,Finance,2020-12-01,Excellent work
+133,Eve,,Chiang Mai,55000.0,HR,2020-08-15,None
+134,Eve,31.0,Bangkok,45000.0,HR,2019-03-20,good employee!!
+135,Bob,36.0,Bangkok,50000.0,Finance,2021-07-01,hard Working
+136,Alice,31.0,Phuket,45000.0,HR,2020-01-15,good team player
+137,Alice,31.0,Chiang Mai,51000.0,IT,2020-01-15,good employee!!
+138,Bob,36.0,,45000.0,IT,2020-12-01,good employee!!
+139,Eve,29.0,Chiang Mai,48000.0,HR,2020-01-15,good EMPLOYEE!!
+140,David,28.0,Phuket,62000.0,HR,2020-12-01,Hard working
+141,Alice,31.0,Bangkok,48000.0,Finance,2020-01-15,
+142,Bob,28.0,Bangkok,59000.0,IT,2020-12-01,Hard working
+143,Alice,25.0,Bangkok,62000.0,HR,2020-08-15,Very dedicated...
+144,Charlie,22.0,Chiang Mai,45000.0,Finance,2020-08-15,good team player
+145,Bob,,Bangkok,48000.0,IT,2020-01-15,None
+146,Alice,40.0,Bangkok,,Finance,2021-07-01,good employee!!
+147,David,38.0,Chiang Mai,59000.0,IT,2020-12-01,None
+148,Alice,30.0,Chiang Mai,62000.0,Finance,2020-12-01,Very Dedicated...
+149,Eve,28.0,Phuket,45000.0,Finance,2021-07-01,Excellent work
+150,Alice,25.0,Chiang Mai,48000.0,IT,2020-08-15,average
+151,Eve,36.0,,62000.0,IT,2021-07-01,Excellent work
+152,Alice,29.0,Chiang Mai,48000.0,HR,2019-03-20,
+153,Bob,45.0,Chiang Mai,47000.0,HR,2020-08-15,Very Dedicated...
+154,Eve,29.0,Phuket,60000.0,Finance,2021-07-01,good employee!!
+155,Eve,28.0,,51000.0,Finance,2020-08-15,good EMPLOYEE!!
+156,Bob,45.0,,51000.0,HR,2020-08-15,good team player
+157,Alice,31.0,Bangkok,60000.0,HR,2019-03-20,Excellent Work
+158,Eve,38.0,Chiang Mai,59000.0,Finance,2020-01-15,Good employee!!
+159,Charlie,36.0,Phuket,59000.0,IT,2020-01-15,needs Improvement
+160,Alice,31.0,Phuket,55000.0,Finance,2020-01-15,excellent Work
+161,Charlie,,Chiang Mai,55000.0,Finance,2020-08-15,None
+162,Alice,22.0,Bangkok,45000.0,Finance,2020-08-15,good EMPLOYEE!!
+163,Eve,29.0,,55000.0,IT,2020-01-15,good employee!!
+164,Eve,30.0,,47000.0,Finance,2021-07-01,Excellent work
+165,Bob,45.0,,,HR,2020-12-01,
+166,Alice,,,,HR,2020-08-15,Very Dedicated...
+167,Bob,30.0,Chiang Mai,50000.0,IT,2020-01-15,excellent Work
+168,Alice,31.0,,45000.0,Finance,2020-01-15,Excellent Work
+169,Alice,,Bangkok,,IT,2021-07-01,Needs improvement
+170,Alice,22.0,Bangkok,45000.0,HR,2020-08-15,good employee!!
+171,Eve,28.0,Phuket,48000.0,HR,2020-08-15,needs Improvement
+172,Eve,29.0,Chiang Mai,59000.0,HR,2020-01-15,Average
+173,Eve,40.0,,47000.0,Finance,2020-08-15,Good employee!!
+174,Bob,40.0,Phuket,48000.0,Finance,2020-12-01,good team player
+175,Alice,38.0,Bangkok,55000.0,HR,2020-08-15,Hard working
+176,Alice,29.0,,51000.0,IT,2019-03-20,Hard working
+177,Bob,22.0,,60000.0,Finance,2020-12-01,excellent Work
+178,Charlie,,Chiang Mai,,IT,2020-01-15,None
+179,Charlie,36.0,Phuket,45000.0,HR,2020-08-15,Average
+180,David,30.0,Bangkok,47000.0,HR,2021-07-01,Excellent work
+181,Alice,29.0,Chiang Mai,50000.0,IT,2020-08-15,needs Improvement
+182,Alice,36.0,Phuket,55000.0,HR,2020-08-15,average
+183,Alice,25.0,Chiang Mai,,Finance,2020-01-15,Excellent Work
+184,Eve,31.0,Phuket,51000.0,HR,2021-07-01,
+185,Charlie,36.0,Bangkok,48000.0,HR,2020-08-15,Average
+186,Bob,22.0,,62000.0,Finance,2020-12-01,good employee!!
+187,Alice,40.0,Bangkok,52000.0,HR,2020-01-15,Hard working
+188,Bob,36.0,,59000.0,HR,2020-08-15,Excellent work
+189,Alice,45.0,Phuket,55000.0,Finance,2020-12-01,good team player
+190,Bob,45.0,,,HR,2021-07-01,Needs improvement
+191,Eve,29.0,Bangkok,55000.0,Finance,2020-08-15,None
+192,Alice,36.0,,,Finance,2019-03-20,Excellent work
+193,Eve,31.0,Bangkok,,IT,2019-03-20,Very dedicated...
+194,Charlie,22.0,Chiang Mai,52000.0,Finance,2019-03-20,Hard working
+195,Bob,,Phuket,62000.0,Finance,2020-12-01,hard Working
+196,Charlie,25.0,,60000.0,Finance,2020-12-01,excellent Work
+197,Alice,36.0,,51000.0,Finance,2021-07-01,Hard working
+198,Charlie,36.0,Phuket,59000.0,Finance,2020-12-01,None
+199,Charlie,31.0,Bangkok,47000.0,IT,2019-03-20,
+200,Alice,45.0,Phuket,47000.0,Finance,2021-07-01,good employee!!
+201,Alice,25.0,Phuket,48000.0,Finance,2020-08-15,
+202,Alice,28.0,Bangkok,52000.0,Finance,2021-07-01,
+203,Charlie,22.0,Chiang Mai,51000.0,IT,2020-12-01,needs Improvement
+204,Alice,,Chiang Mai,59000.0,Finance,2020-12-01,needs Improvement
+205,Eve,29.0,Bangkok,50000.0,Finance,2020-01-15,Needs improvement
+206,David,45.0,,47000.0,Finance,2020-12-01,None
+207,Alice,25.0,,48000.0,IT,2020-12-01,Good employee!!
+208,Charlie,22.0,Chiang Mai,52000.0,Finance,2019-03-20,average
+209,Eve,30.0,Bangkok,48000.0,Finance,2020-12-01,good employee!!
+210,Eve,25.0,Phuket,59000.0,HR,2020-01-15,
+211,Eve,25.0,Phuket,60000.0,HR,2020-08-15,Average
+212,Alice,29.0,Phuket,60000.0,HR,2020-12-01,good EMPLOYEE!!
+213,Bob,45.0,Phuket,62000.0,HR,2021-07-01,
+214,Alice,38.0,Bangkok,60000.0,Finance,2019-03-20,Excellent work
+215,Bob,30.0,Phuket,48000.0,HR,2020-08-15,Excellent work
+216,Charlie,30.0,Bangkok,59000.0,Finance,2020-08-15,Very dedicated...
+217,Alice,22.0,,55000.0,IT,2021-07-01,Very Dedicated...
+218,David,28.0,Phuket,62000.0,IT,2021-07-01,Hard working
+219,Charlie,,Chiang Mai,52000.0,IT,2020-12-01,Very dedicated...
+220,Alice,36.0,Bangkok,,HR,2021-07-01,
+221,Bob,38.0,Chiang Mai,60000.0,HR,2020-08-15,hard Working
+222,Eve,31.0,Bangkok,,Finance,2020-01-15,Good employee!!
+223,Eve,29.0,Chiang Mai,51000.0,Finance,2019-03-20,Excellent work
+224,David,30.0,,51000.0,IT,2021-07-01,good team player
+225,Eve,22.0,Chiang Mai,51000.0,IT,2020-01-15,hard Working
+226,Alice,25.0,Chiang Mai,59000.0,IT,2020-12-01,Very Dedicated...
+227,Charlie,,Chiang Mai,,HR,2021-07-01,needs Improvement
+228,Charlie,45.0,Chiang Mai,,Finance,2020-08-15,Excellent Work
+229,David,29.0,,,IT,2020-12-01,Excellent Work
+230,David,29.0,Bangkok,50000.0,HR,2019-03-20,Good employee!!
+231,Charlie,36.0,Chiang Mai,55000.0,Finance,2020-12-01,good team player
+232,Bob,28.0,Chiang Mai,52000.0,Finance,2020-08-15,Very Dedicated...
+233,Charlie,31.0,,45000.0,Finance,2020-08-15,
+234,Eve,45.0,Phuket,52000.0,HR,2019-03-20,Very Dedicated...
+235,Bob,36.0,Chiang Mai,60000.0,Finance,2020-08-15,Average
+236,Bob,25.0,Phuket,55000.0,Finance,2020-12-01,Hard working
+237,Bob,40.0,,51000.0,Finance,2020-08-15,Very dedicated...
+238,Charlie,30.0,,,Finance,2020-01-15,good team player
+239,David,,,,HR,2020-12-01,Excellent Work
+240,Eve,36.0,Bangkok,62000.0,IT,2021-07-01,needs Improvement
+241,Eve,22.0,Chiang Mai,48000.0,HR,2021-07-01,excellent Work
+242,David,30.0,Bangkok,52000.0,HR,2020-12-01,good team player
+243,Bob,45.0,Bangkok,47000.0,IT,2020-01-15,
+244,Bob,29.0,,55000.0,IT,2020-08-15,good team player
+245,Alice,,Bangkok,55000.0,IT,2020-01-15,good employee!!
+246,Alice,30.0,Bangkok,45000.0,Finance,2020-12-01,
+247,Alice,45.0,,51000.0,Finance,2020-12-01,hard Working
+248,Alice,25.0,Bangkok,48000.0,Finance,2021-07-01,hard Working
+249,David,31.0,Phuket,50000.0,IT,2021-07-01,good EMPLOYEE!!
+250,Alice,31.0,Chiang Mai,59000.0,Finance,2020-08-15,Very Dedicated...
+251,Eve,40.0,Phuket,55000.0,Finance,2021-07-01,Hard working
+252,Charlie,22.0,Phuket,51000.0,IT,2021-07-01,good team player
+253,David,45.0,Chiang Mai,62000.0,HR,2019-03-20,good team player
+254,Alice,30.0,,51000.0,Finance,2020-01-15,
+255,Bob,,,50000.0,Finance,2020-08-15,Very dedicated...
+256,David,,Phuket,50000.0,Finance,2020-08-15,Excellent work
+257,Bob,,,59000.0,HR,2020-08-15,good team player
+258,Eve,31.0,,45000.0,HR,2019-03-20,Very dedicated...
+259,Bob,30.0,Bangkok,,HR,2020-12-01,Very Dedicated...
+260,Charlie,22.0,,52000.0,Finance,2020-12-01,Very Dedicated...
+261,David,,Bangkok,62000.0,Finance,2020-12-01,good team player
+262,Alice,36.0,Bangkok,47000.0,HR,2020-08-15,Hard working
+263,Alice,31.0,,62000.0,HR,2020-12-01,
+264,Alice,38.0,Phuket,,IT,2020-01-15,good employee!!
+265,Eve,22.0,Bangkok,52000.0,Finance,2019-03-20,Excellent work
+266,Eve,45.0,,52000.0,HR,2021-07-01,None
+267,Alice,38.0,Phuket,47000.0,HR,2020-12-01,Hard working
+268,Charlie,29.0,,52000.0,IT,2020-01-15,Excellent work
+269,Charlie,38.0,Bangkok,48000.0,Finance,2019-03-20,Good employee!!
+270,David,36.0,Bangkok,47000.0,IT,2020-08-15,Hard working
+271,Alice,38.0,,51000.0,HR,2020-12-01,Excellent work
+272,David,31.0,Chiang Mai,52000.0,IT,2021-07-01,Very dedicated...
+273,Charlie,31.0,Chiang Mai,48000.0,HR,2020-01-15,Needs improvement
+274,Alice,22.0,Phuket,51000.0,IT,2019-03-20,Excellent Work
+275,David,30.0,,52000.0,IT,2019-03-20,good team player
+276,David,25.0,Bangkok,51000.0,IT,2020-01-15,good EMPLOYEE!!
+277,David,25.0,,50000.0,IT,2020-08-15,
+278,Bob,22.0,Chiang Mai,45000.0,Finance,2020-08-15,Needs improvement
+279,Eve,29.0,Phuket,52000.0,HR,2020-08-15,Average
+280,David,22.0,Bangkok,52000.0,IT,2020-12-01,
+281,Eve,,Chiang Mai,48000.0,IT,2020-08-15,Very Dedicated...
+282,Eve,22.0,Bangkok,55000.0,IT,2021-07-01,good employee!!
+283,Alice,30.0,Bangkok,45000.0,IT,2020-12-01,Very dedicated...
+284,David,29.0,Bangkok,47000.0,Finance,2020-12-01,Excellent work
+285,Charlie,22.0,,51000.0,IT,2020-01-15,None
+286,David,40.0,Chiang Mai,51000.0,HR,2020-12-01,
+287,Charlie,38.0,,59000.0,IT,2020-01-15,needs Improvement
+288,Bob,40.0,,62000.0,Finance,2019-03-20,Very Dedicated...
+289,Alice,45.0,Chiang Mai,59000.0,Finance,2019-03-20,good EMPLOYEE!!
+290,Alice,45.0,,60000.0,HR,2020-08-15,None
+291,David,30.0,,,HR,2021-07-01,good EMPLOYEE!!
+292,Alice,28.0,Phuket,,Finance,2019-03-20,Excellent work
+293,Eve,40.0,Phuket,50000.0,IT,2020-01-15,good team player
+294,Alice,,Bangkok,47000.0,HR,2020-12-01,good EMPLOYEE!!
+295,Eve,28.0,Chiang Mai,55000.0,IT,2020-12-01,Very dedicated...
+296,Bob,25.0,Chiang Mai,48000.0,HR,2020-08-15,Excellent work
+297,David,28.0,Chiang Mai,59000.0,HR,2019-03-20,Hard working
+298,David,31.0,Chiang Mai,55000.0,HR,2020-12-01,hard Working
+299,Alice,22.0,,62000.0,IT,2019-03-20,Average
+300,Charlie,,Chiang Mai,,HR,2021-07-01,Excellent work
+301,Bob,30.0,Bangkok,45000.0,HR,2021-07-01,excellent Work
+302,Charlie,31.0,,48000.0,HR,2020-01-15,Excellent work
+303,Eve,,Chiang Mai,62000.0,IT,2019-03-20,Excellent work
+304,Eve,29.0,Phuket,48000.0,Finance,2019-03-20,Good employee!!
+305,Charlie,30.0,Bangkok,48000.0,Finance,2020-12-01,average
+306,Eve,29.0,Phuket,55000.0,Finance,2021-07-01,Hard working
+307,Eve,38.0,,48000.0,IT,2020-12-01,good employee!!
+308,Eve,22.0,,52000.0,HR,2019-03-20,Average
+309,David,25.0,Phuket,62000.0,IT,2019-03-20,excellent Work
+310,David,28.0,Bangkok,60000.0,IT,2020-01-15,None
+311,Charlie,28.0,,50000.0,IT,2020-01-15,
+312,Alice,45.0,Chiang Mai,52000.0,IT,2021-07-01,Good employee!!
+313,Bob,30.0,Chiang Mai,51000.0,IT,2019-03-20,Excellent Work
+314,Alice,45.0,,51000.0,Finance,2021-07-01,good team player
+315,Charlie,45.0,Chiang Mai,50000.0,HR,2020-01-15,Hard working
+316,Bob,25.0,Bangkok,59000.0,HR,2020-12-01,Excellent work
+317,Bob,29.0,Chiang Mai,60000.0,Finance,2019-03-20,good employee!!
+318,Alice,,Chiang Mai,51000.0,Finance,2021-07-01,good EMPLOYEE!!
+319,Charlie,45.0,,60000.0,Finance,2020-08-15,excellent Work
+320,Bob,45.0,Chiang Mai,51000.0,Finance,2020-01-15,Hard working
+321,Alice,36.0,Phuket,,HR,2021-07-01,Very dedicated...
+322,David,45.0,Chiang Mai,48000.0,HR,2020-12-01,good team player
+323,Charlie,,Phuket,50000.0,Finance,2020-12-01,good team player
+324,David,38.0,Bangkok,50000.0,HR,2021-07-01,
+325,Bob,45.0,Phuket,52000.0,IT,2020-01-15,Excellent Work
+326,Eve,28.0,,,IT,2020-08-15,good employee!!
+327,Eve,36.0,,47000.0,IT,2021-07-01,Very dedicated...
+328,David,38.0,Phuket,47000.0,Finance,2020-12-01,needs Improvement
+329,David,45.0,Bangkok,51000.0,Finance,2020-08-15,
+330,David,25.0,Bangkok,62000.0,HR,2021-07-01,Good employee!!
+331,Bob,38.0,,48000.0,HR,2020-12-01,Excellent Work
+332,Bob,25.0,,51000.0,HR,2020-08-15,excellent Work
+333,Eve,45.0,Bangkok,,IT,2019-03-20,Needs improvement
+334,Charlie,22.0,Chiang Mai,50000.0,IT,2020-08-15,Very dedicated...
+335,Alice,36.0,,45000.0,IT,2021-07-01,None
+336,Charlie,28.0,,55000.0,HR,2020-08-15,good team player
+337,Alice,29.0,Bangkok,55000.0,Finance,2021-07-01,Needs improvement
+338,Charlie,31.0,Bangkok,,IT,2021-07-01,None
+339,Bob,29.0,Chiang Mai,,IT,2020-01-15,Excellent work
+340,Bob,38.0,Phuket,52000.0,HR,2019-03-20,Very Dedicated...
+341,Eve,,Bangkok,,IT,2020-12-01,excellent Work
+342,Bob,28.0,Bangkok,45000.0,HR,2020-08-15,good team player
+343,Charlie,45.0,Bangkok,50000.0,HR,2020-08-15,Very dedicated...
+344,David,45.0,Phuket,47000.0,HR,2020-12-01,Good employee!!
+345,David,28.0,Bangkok,51000.0,IT,2019-03-20,
+346,David,28.0,,48000.0,HR,2020-01-15,good team player
+347,Alice,22.0,,62000.0,IT,2021-07-01,
+348,David,31.0,Phuket,45000.0,Finance,2021-07-01,None
+349,Bob,31.0,,48000.0,IT,2019-03-20,good EMPLOYEE!!
+350,Charlie,36.0,Phuket,45000.0,IT,2020-12-01,Hard working
+351,Eve,29.0,Chiang Mai,52000.0,HR,2020-08-15,None
+352,Alice,38.0,Chiang Mai,55000.0,Finance,2020-12-01,Excellent Work
+353,Eve,31.0,Phuket,62000.0,Finance,2020-08-15,hard Working
+354,David,40.0,Phuket,52000.0,IT,2021-07-01,Hard working
+355,Eve,28.0,Bangkok,62000.0,Finance,2020-01-15,Hard working
+356,Eve,38.0,Chiang Mai,50000.0,HR,2020-08-15,hard Working
+357,Eve,25.0,Phuket,50000.0,Finance,2020-08-15,excellent Work
+358,Bob,38.0,Bangkok,62000.0,HR,2020-12-01,Very dedicated...
+359,Alice,29.0,Phuket,51000.0,IT,2020-08-15,Needs improvement
+360,Alice,45.0,Chiang Mai,51000.0,HR,2020-08-15,Average
+361,David,25.0,Chiang Mai,47000.0,IT,2021-07-01,Excellent work
+362,Bob,40.0,Phuket,62000.0,HR,2020-08-15,Excellent work
+363,Eve,45.0,,60000.0,IT,2019-03-20,Very dedicated...
+364,Alice,30.0,Bangkok,50000.0,HR,2020-08-15,Very Dedicated...
+365,David,45.0,Bangkok,45000.0,Finance,2020-08-15,good EMPLOYEE!!
+366,Bob,36.0,,51000.0,Finance,2020-01-15,good team player
+367,Alice,28.0,Phuket,60000.0,Finance,2020-12-01,Excellent work
+368,Bob,40.0,Phuket,47000.0,Finance,2020-01-15,hard Working
+369,Eve,31.0,Chiang Mai,50000.0,Finance,2020-08-15,average
+370,Eve,36.0,Phuket,62000.0,Finance,2021-07-01,Average
+371,Bob,30.0,,,Finance,2021-07-01,Needs improvement
+372,Bob,40.0,Bangkok,45000.0,IT,2020-12-01,None
+373,Eve,31.0,,,HR,2020-08-15,Excellent Work
+374,Alice,25.0,Chiang Mai,51000.0,HR,2020-12-01,
+375,Bob,36.0,,60000.0,IT,2019-03-20,Excellent work
+376,Eve,28.0,Bangkok,52000.0,IT,2019-03-20,
+377,Charlie,38.0,Chiang Mai,45000.0,HR,2020-12-01,needs Improvement
+378,Alice,25.0,Phuket,,IT,2019-03-20,good employee!!
+379,Bob,38.0,Phuket,51000.0,HR,2020-12-01,hard Working
+380,David,25.0,Chiang Mai,59000.0,Finance,2020-08-15,Hard working
+381,David,30.0,Chiang Mai,62000.0,HR,2021-07-01,Excellent Work
+382,Alice,29.0,Phuket,48000.0,HR,2021-07-01,good employee!!
+383,Eve,31.0,Chiang Mai,51000.0,IT,2020-01-15,Excellent Work
+384,David,,,47000.0,Finance,2019-03-20,good team player
+385,David,36.0,Phuket,50000.0,IT,2020-08-15,hard Working
+386,Alice,36.0,Chiang Mai,45000.0,HR,2021-07-01,good employee!!
+387,Eve,28.0,Bangkok,55000.0,Finance,2020-12-01,good team player
+388,Charlie,30.0,,,Finance,2020-01-15,good EMPLOYEE!!
+389,David,25.0,Bangkok,47000.0,IT,2020-01-15,excellent Work
+390,Alice,29.0,Bangkok,47000.0,Finance,2020-08-15,
+391,David,31.0,Bangkok,62000.0,HR,2019-03-20,
+392,Charlie,29.0,Bangkok,47000.0,Finance,2020-01-15,Very dedicated...
+393,Alice,,Bangkok,45000.0,IT,2021-07-01,Very dedicated...
+394,Bob,31.0,,62000.0,Finance,2021-07-01,Excellent Work
+395,Eve,30.0,Bangkok,60000.0,HR,2020-01-15,Excellent work
+396,Bob,31.0,Bangkok,60000.0,IT,2021-07-01,
+397,Bob,38.0,Bangkok,59000.0,Finance,2020-08-15,Needs improvement
+398,David,22.0,Chiang Mai,51000.0,HR,2019-03-20,Very Dedicated...
+399,Eve,36.0,Chiang Mai,47000.0,Finance,2020-12-01,good EMPLOYEE!!
+400,Alice,30.0,Bangkok,55000.0,IT,2020-01-15,Needs improvement
+401,David,38.0,Bangkok,,Finance,2020-01-15,None
+402,Bob,25.0,,51000.0,Finance,2021-07-01,good team player
+403,Alice,22.0,Bangkok,51000.0,IT,2020-01-15,excellent Work
+404,Bob,25.0,Phuket,60000.0,HR,2020-01-15,good employee!!
+405,Eve,31.0,Phuket,62000.0,HR,2019-03-20,Very Dedicated...
+406,Charlie,30.0,,51000.0,IT,2020-01-15,good employee!!
+407,David,29.0,Phuket,62000.0,Finance,2020-12-01,needs Improvement
+408,David,22.0,Bangkok,50000.0,HR,2020-08-15,None
+409,David,36.0,,,Finance,2020-08-15,Hard working
+410,Eve,28.0,Chiang Mai,59000.0,HR,2019-03-20,hard Working
+411,Eve,45.0,Phuket,50000.0,Finance,2021-07-01,excellent Work
+412,Alice,31.0,Phuket,,Finance,2020-01-15,
+413,Bob,38.0,Bangkok,,IT,2021-07-01,Good employee!!
+414,Bob,29.0,Chiang Mai,55000.0,IT,2019-03-20,Hard working
+415,Charlie,38.0,Chiang Mai,52000.0,Finance,2020-08-15,excellent Work
+416,Alice,45.0,Chiang Mai,52000.0,Finance,2020-12-01,
+417,Charlie,45.0,Chiang Mai,47000.0,HR,2019-03-20,excellent Work
+418,Bob,25.0,Bangkok,51000.0,Finance,2021-07-01,Very Dedicated...
+419,Charlie,40.0,,50000.0,IT,2020-12-01,good employee!!
+420,Charlie,45.0,Bangkok,,Finance,2019-03-20,Excellent work
+421,Alice,38.0,Phuket,52000.0,IT,2020-01-15,excellent Work
+422,David,25.0,Phuket,,Finance,2019-03-20,good EMPLOYEE!!
+423,Bob,36.0,Bangkok,60000.0,IT,2019-03-20,Good employee!!
+424,Alice,36.0,Chiang Mai,,HR,2019-03-20,Excellent work
+425,Eve,40.0,Chiang Mai,62000.0,IT,2020-12-01,good employee!!
+426,David,28.0,Phuket,55000.0,IT,2020-01-15,Average
+427,Charlie,25.0,Bangkok,62000.0,IT,2020-08-15,good employee!!
+428,Charlie,28.0,Chiang Mai,45000.0,HR,2021-07-01,good EMPLOYEE!!
+429,Bob,38.0,Bangkok,50000.0,HR,2020-08-15,average
+430,Bob,30.0,Bangkok,,Finance,2021-07-01,good team player
+431,Bob,25.0,Phuket,51000.0,IT,2020-08-15,Average
+432,Eve,38.0,Phuket,,HR,2020-08-15,Good employee!!
+433,Eve,36.0,,60000.0,HR,2021-07-01,needs Improvement
+434,Alice,38.0,Phuket,52000.0,IT,2020-08-15,None
+435,Bob,40.0,,55000.0,Finance,2019-03-20,good team player
+436,David,30.0,,45000.0,IT,2020-08-15,average
+437,David,36.0,Bangkok,55000.0,HR,2019-03-20,
+438,David,40.0,Chiang Mai,51000.0,IT,2020-01-15,good EMPLOYEE!!
+439,David,28.0,Chiang Mai,59000.0,IT,2020-12-01,Average
+440,David,30.0,Bangkok,47000.0,IT,2020-01-15,hard Working
+441,Eve,36.0,,47000.0,IT,2021-07-01,Excellent work
+442,Bob,38.0,Phuket,52000.0,IT,2021-07-01,Very Dedicated...
+443,Charlie,22.0,Chiang Mai,60000.0,Finance,2020-08-15,good EMPLOYEE!!
+444,Charlie,31.0,Bangkok,50000.0,IT,2020-01-15,good EMPLOYEE!!
+445,Eve,45.0,,,IT,2019-03-20,excellent Work
+446,Eve,31.0,Chiang Mai,,IT,2019-03-20,
+447,Bob,38.0,Phuket,48000.0,Finance,2019-03-20,average
+448,Eve,29.0,Chiang Mai,45000.0,IT,2020-12-01,Excellent Work
+449,Charlie,40.0,Phuket,45000.0,HR,2019-03-20,None
+450,David,22.0,Bangkok,51000.0,IT,2020-12-01,good team player
+451,Charlie,25.0,Bangkok,48000.0,IT,2020-01-15,Excellent work
+452,Eve,38.0,Phuket,60000.0,Finance,2020-08-15,Very Dedicated...
+453,Eve,25.0,,51000.0,Finance,2020-01-15,
+454,David,31.0,Bangkok,60000.0,IT,2020-08-15,
+455,Alice,28.0,Bangkok,48000.0,HR,2021-07-01,excellent Work
+456,Alice,38.0,Phuket,52000.0,IT,2020-01-15,average
+457,Charlie,28.0,Phuket,59000.0,IT,2020-12-01,excellent Work
+458,Alice,30.0,Chiang Mai,45000.0,IT,2020-01-15,excellent Work
+459,Bob,30.0,,52000.0,IT,2020-01-15,Excellent work
+460,Charlie,30.0,Phuket,55000.0,IT,2020-01-15,Excellent work
+461,Eve,31.0,Phuket,51000.0,Finance,2019-03-20,Average
+462,Charlie,22.0,Bangkok,,IT,2020-01-15,good EMPLOYEE!!
+463,Eve,38.0,Phuket,51000.0,Finance,2021-07-01,Very dedicated...
+464,Charlie,45.0,Chiang Mai,,IT,2020-08-15,good EMPLOYEE!!
+465,David,38.0,Bangkok,59000.0,HR,2020-12-01,Excellent Work
+466,Eve,29.0,,45000.0,IT,2020-12-01,needs Improvement
+467,Charlie,30.0,Bangkok,52000.0,IT,2019-03-20,None
+468,David,29.0,Phuket,55000.0,Finance,2020-01-15,hard Working
+469,Eve,31.0,,45000.0,Finance,2021-07-01,Excellent Work
+470,Eve,45.0,Bangkok,52000.0,IT,2021-07-01,good employee!!
+471,Charlie,40.0,Bangkok,,IT,2020-12-01,Good employee!!
+472,Bob,40.0,Chiang Mai,50000.0,Finance,2020-01-15,
+473,Bob,31.0,Phuket,50000.0,HR,2019-03-20,Average
+474,David,36.0,Bangkok,,HR,2020-08-15,good team player
+475,Charlie,22.0,Phuket,,HR,2021-07-01,
+476,David,29.0,Chiang Mai,55000.0,Finance,2020-12-01,Average
+477,Charlie,45.0,Phuket,48000.0,IT,2019-03-20,
+478,David,29.0,Bangkok,51000.0,Finance,2021-07-01,Average
+479,Eve,31.0,Chiang Mai,45000.0,IT,2019-03-20,Excellent work
+480,Charlie,22.0,Phuket,,Finance,2020-01-15,good team player
+481,Charlie,29.0,,62000.0,HR,2020-01-15,needs Improvement
+482,Bob,31.0,,50000.0,Finance,2020-08-15,good EMPLOYEE!!
+483,David,36.0,,52000.0,IT,2020-08-15,Hard working
+484,Bob,30.0,,60000.0,Finance,2021-07-01,good EMPLOYEE!!
+485,David,30.0,Bangkok,50000.0,Finance,2020-12-01,good team player
+486,Eve,38.0,,50000.0,HR,2019-03-20,Very Dedicated...
+487,Bob,31.0,Chiang Mai,62000.0,HR,2020-12-01,hard Working
+488,Eve,45.0,Bangkok,48000.0,Finance,2019-03-20,good employee!!
+489,Bob,25.0,Chiang Mai,51000.0,IT,2019-03-20,Excellent work
+490,Bob,31.0,Bangkok,51000.0,HR,2021-07-01,Very Dedicated...
+491,Bob,38.0,Chiang Mai,59000.0,Finance,2021-07-01,good EMPLOYEE!!
+492,David,29.0,,51000.0,IT,2019-03-20,
+493,David,38.0,Bangkok,59000.0,Finance,2020-08-15,average
+494,David,45.0,Chiang Mai,62000.0,HR,2020-12-01,Excellent work
+495,Alice,31.0,Phuket,50000.0,HR,2021-07-01,
+496,Bob,,Phuket,47000.0,IT,2021-07-01,good employee!!
+497,David,25.0,,45000.0,HR,2021-07-01,excellent Work
+498,Eve,28.0,Chiang Mai,47000.0,HR,2020-12-01,Needs improvement
+499,David,30.0,Bangkok,59000.0,IT,2019-03-20,good team player
+500,David,29.0,Bangkok,51000.0,IT,2020-08-15,Excellent work
+501,David,30.0,Phuket,62000.0,IT,2020-12-01,good EMPLOYEE!!
+502,Alice,25.0,,50000.0,Finance,2020-01-15,
+503,Charlie,29.0,,62000.0,HR,2019-03-20,Needs improvement
+504,Eve,31.0,,59000.0,IT,2020-01-15,Very Dedicated...
+505,Charlie,40.0,Chiang Mai,52000.0,IT,2020-01-15,Excellent work
+506,Bob,30.0,Phuket,59000.0,HR,2020-12-01,good employee!!
+507,Eve,22.0,,45000.0,IT,2021-07-01,Excellent work
+508,Bob,31.0,Chiang Mai,52000.0,HR,2020-01-15,Very Dedicated...
+509,Bob,36.0,,,Finance,2019-03-20,Hard working
+510,Alice,30.0,Bangkok,52000.0,IT,2020-01-15,
+511,Eve,36.0,Bangkok,52000.0,HR,2020-01-15,average
+512,Eve,22.0,Chiang Mai,60000.0,IT,2020-12-01,
+513,Eve,40.0,Phuket,48000.0,Finance,2019-03-20,Good employee!!
+514,Alice,,Bangkok,47000.0,Finance,2020-12-01,None
+515,David,,Phuket,,Finance,2020-08-15,
+516,Charlie,28.0,Bangkok,59000.0,IT,2020-01-15,Very Dedicated...
+517,Eve,25.0,Chiang Mai,50000.0,HR,2020-08-15,Very Dedicated...
+518,Eve,31.0,,62000.0,Finance,2020-12-01,good employee!!
+519,Bob,28.0,Chiang Mai,47000.0,IT,2020-01-15,needs Improvement
+520,Eve,38.0,Phuket,52000.0,HR,2020-01-15,hard Working
+521,Charlie,22.0,Bangkok,60000.0,Finance,2020-12-01,good employee!!
+522,Eve,31.0,,62000.0,IT,2020-01-15,Excellent work
+523,Bob,25.0,Phuket,52000.0,HR,2020-01-15,good EMPLOYEE!!
+524,Eve,40.0,,50000.0,IT,2020-01-15,needs Improvement
+525,David,22.0,Bangkok,45000.0,HR,2021-07-01,Very Dedicated...
+526,Bob,36.0,Phuket,55000.0,IT,2020-08-15,Hard working
+527,David,31.0,,52000.0,HR,2020-12-01,excellent Work
+528,Bob,22.0,Bangkok,55000.0,HR,2021-07-01,Excellent work
+529,Alice,30.0,Phuket,45000.0,Finance,2020-08-15,Needs improvement
+530,Alice,29.0,Phuket,51000.0,HR,2020-08-15,needs Improvement
+531,Eve,22.0,Phuket,47000.0,HR,2019-03-20,Very Dedicated...
+532,David,29.0,Phuket,45000.0,HR,2020-01-15,excellent Work
+533,Eve,25.0,Chiang Mai,48000.0,IT,2019-03-20,
+534,Eve,36.0,,60000.0,HR,2020-01-15,good team player
+535,Bob,31.0,Bangkok,62000.0,IT,2020-08-15,Hard working
+536,David,45.0,Chiang Mai,60000.0,Finance,2021-07-01,Good employee!!
+537,Eve,,Phuket,55000.0,HR,2020-08-15,Hard working
+538,Alice,38.0,Chiang Mai,48000.0,HR,2020-12-01,Excellent work
+539,David,45.0,Bangkok,47000.0,HR,2020-08-15,good team player
+540,Alice,38.0,Chiang Mai,51000.0,IT,2020-01-15,good team player
+541,Eve,29.0,,55000.0,HR,2019-03-20,needs Improvement
+542,Eve,28.0,Chiang Mai,48000.0,HR,2020-08-15,Hard working
+543,David,28.0,Bangkok,48000.0,HR,2019-03-20,excellent Work
+544,Eve,25.0,Bangkok,59000.0,IT,2020-01-15,average
+545,Bob,30.0,Chiang Mai,48000.0,Finance,2020-12-01,average
+546,Alice,30.0,Chiang Mai,51000.0,Finance,2021-07-01,
+547,Charlie,,Bangkok,47000.0,Finance,2020-01-15,
+548,Bob,31.0,,,Finance,2020-08-15,good team player
+549,David,38.0,,55000.0,IT,2019-03-20,good team player
+550,Bob,,Bangkok,51000.0,Finance,2019-03-20,Needs improvement
+551,Charlie,38.0,Bangkok,48000.0,HR,2021-07-01,None
+552,Alice,28.0,,59000.0,Finance,2020-12-01,
+553,David,30.0,Bangkok,45000.0,HR,2021-07-01,good team player
+554,Eve,30.0,Chiang Mai,47000.0,Finance,2021-07-01,good employee!!
+555,Eve,25.0,,52000.0,IT,2020-01-15,
+556,Bob,31.0,,62000.0,HR,2019-03-20,Average
+557,Alice,,,59000.0,Finance,2020-12-01,Hard working
+558,David,36.0,,45000.0,IT,2021-07-01,Average
+559,Bob,45.0,Chiang Mai,59000.0,Finance,2020-01-15,good team player
+560,Charlie,36.0,Bangkok,52000.0,HR,2020-12-01,Hard working
+561,Charlie,38.0,Bangkok,,Finance,2020-12-01,Good employee!!
+562,Charlie,28.0,Phuket,45000.0,IT,2021-07-01,Very dedicated...
+563,Alice,29.0,,51000.0,HR,2020-01-15,average
+564,Bob,36.0,,60000.0,HR,2021-07-01,Very dedicated...
+565,David,29.0,Bangkok,52000.0,HR,2020-12-01,good employee!!
+566,Charlie,45.0,,50000.0,IT,2021-07-01,Very Dedicated...
+567,Charlie,25.0,Phuket,55000.0,HR,2020-01-15,hard Working
+568,David,36.0,Bangkok,55000.0,IT,2020-01-15,Very Dedicated...
+569,Bob,29.0,Chiang Mai,50000.0,IT,2020-01-15,Very dedicated...
+570,Bob,31.0,,50000.0,IT,2019-03-20,Good employee!!
+571,Eve,29.0,,48000.0,HR,2021-07-01,needs Improvement
+572,Charlie,30.0,Phuket,45000.0,HR,2021-07-01,Average
+573,Alice,,Phuket,59000.0,Finance,2020-12-01,
+574,Bob,25.0,Bangkok,51000.0,Finance,2020-12-01,None
+575,Charlie,38.0,,59000.0,IT,2019-03-20,good EMPLOYEE!!
+576,Charlie,40.0,Bangkok,62000.0,Finance,2019-03-20,good team player
+577,David,38.0,,47000.0,HR,2020-08-15,Excellent Work
+578,Charlie,40.0,Bangkok,60000.0,IT,2021-07-01,
+579,David,30.0,Phuket,50000.0,Finance,2020-01-15,Excellent Work
+580,Eve,45.0,Chiang Mai,48000.0,Finance,2020-12-01,Hard working
+581,Bob,29.0,Chiang Mai,47000.0,HR,2020-08-15,good team player
+582,Bob,28.0,Bangkok,59000.0,Finance,2021-07-01,
+583,Charlie,36.0,Phuket,48000.0,Finance,2020-08-15,Excellent work
+584,Bob,31.0,Chiang Mai,50000.0,HR,2020-12-01,good employee!!
+585,Bob,31.0,Chiang Mai,51000.0,IT,2020-01-15,good team player
+586,David,30.0,Phuket,50000.0,HR,2020-12-01,
+587,Bob,25.0,,52000.0,HR,2020-12-01,None
+588,Bob,29.0,Chiang Mai,47000.0,Finance,2020-01-15,good team player
+589,Eve,45.0,Bangkok,52000.0,HR,2020-01-15,Average
+590,Bob,38.0,Phuket,52000.0,IT,2020-12-01,good EMPLOYEE!!
+591,Charlie,28.0,,45000.0,HR,2020-12-01,needs Improvement
+592,Charlie,,Chiang Mai,,HR,2020-08-15,Excellent work
+593,David,29.0,Phuket,45000.0,Finance,2020-08-15,good team player
+594,David,28.0,Chiang Mai,55000.0,Finance,2019-03-20,average
+595,Eve,29.0,Bangkok,60000.0,IT,2020-08-15,
+596,Bob,25.0,Chiang Mai,52000.0,HR,2020-01-15,good EMPLOYEE!!
+597,Eve,30.0,,48000.0,HR,2020-08-15,good team player
+598,Eve,45.0,Bangkok,55000.0,IT,2020-12-01,Very Dedicated...
+599,David,30.0,Bangkok,55000.0,Finance,2020-12-01,good team player
+600,Alice,28.0,,,IT,2020-01-15,Excellent work
+601,Alice,29.0,,60000.0,IT,2019-03-20,Hard working
+602,Charlie,28.0,Chiang Mai,60000.0,IT,2020-08-15,good employee!!
+603,David,22.0,Phuket,45000.0,IT,2020-12-01,good employee!!
+604,Charlie,31.0,Phuket,,IT,2020-08-15,excellent Work
+605,Alice,,Phuket,45000.0,Finance,2020-12-01,Good employee!!
+606,David,38.0,,51000.0,Finance,2020-01-15,None
+607,Charlie,29.0,,,HR,2020-01-15,Very Dedicated...
+608,David,38.0,,51000.0,Finance,2020-01-15,Needs improvement
+609,David,38.0,,52000.0,IT,2021-07-01,excellent Work
+610,David,45.0,Chiang Mai,59000.0,IT,2020-01-15,Excellent work
+611,Charlie,,Bangkok,55000.0,IT,2021-07-01,
+612,Eve,29.0,Bangkok,48000.0,Finance,2020-01-15,Hard working
+613,Alice,31.0,,51000.0,IT,2020-01-15,
+614,Charlie,45.0,Bangkok,55000.0,Finance,2019-03-20,Excellent work
+615,Bob,28.0,Bangkok,50000.0,HR,2020-08-15,Hard working
+616,Charlie,28.0,,60000.0,HR,2019-03-20,Very dedicated...
+617,Charlie,40.0,Bangkok,55000.0,Finance,2019-03-20,Good employee!!
+618,David,25.0,Bangkok,48000.0,IT,2020-01-15,Very dedicated...
+619,Eve,25.0,,62000.0,HR,2020-12-01,
+620,Bob,,,59000.0,HR,2020-12-01,average
+621,Eve,29.0,Phuket,62000.0,IT,2021-07-01,
+622,Eve,45.0,Phuket,51000.0,Finance,2020-08-15,Hard working
+623,Bob,28.0,Chiang Mai,47000.0,HR,2020-12-01,Average
+624,David,25.0,Phuket,62000.0,IT,2019-03-20,None
+625,David,29.0,,52000.0,IT,2020-01-15,None
+626,David,29.0,Chiang Mai,62000.0,Finance,2020-12-01,Needs improvement
+627,Charlie,38.0,Chiang Mai,62000.0,Finance,2020-08-15,hard Working
+628,Charlie,30.0,Phuket,52000.0,IT,2021-07-01,needs Improvement
+629,Charlie,36.0,,51000.0,HR,2019-03-20,Very dedicated...
+630,Charlie,45.0,Bangkok,59000.0,Finance,2020-08-15,hard Working
+631,Bob,28.0,Bangkok,59000.0,HR,2020-01-15,excellent Work
+632,Charlie,,Phuket,47000.0,Finance,2020-12-01,Excellent work
+633,Eve,40.0,Chiang Mai,,Finance,2020-12-01,None
+634,Alice,38.0,Phuket,60000.0,Finance,2019-03-20,Very dedicated...
+635,Bob,,Phuket,52000.0,Finance,2020-01-15,good team player
+636,Alice,40.0,,55000.0,HR,2019-03-20,
+637,Eve,45.0,Phuket,,Finance,2019-03-20,Excellent work
+638,Charlie,36.0,Chiang Mai,55000.0,Finance,2019-03-20,needs Improvement
+639,Eve,40.0,Phuket,48000.0,IT,2021-07-01,excellent Work
+640,Charlie,31.0,,,Finance,2020-08-15,Excellent work
+641,Bob,29.0,Bangkok,47000.0,IT,2021-07-01,Excellent work
+642,Bob,31.0,Chiang Mai,45000.0,HR,2020-08-15,Excellent work
+643,Bob,36.0,Chiang Mai,55000.0,Finance,2020-01-15,Excellent work
+644,Bob,38.0,Chiang Mai,60000.0,HR,2020-01-15,None
+645,Alice,25.0,Phuket,47000.0,Finance,2020-08-15,good team player
+646,David,30.0,Phuket,51000.0,IT,2021-07-01,good EMPLOYEE!!
+647,Alice,25.0,Chiang Mai,47000.0,IT,2021-07-01,
+648,Alice,,Bangkok,59000.0,IT,2020-08-15,needs Improvement
+649,Eve,25.0,,51000.0,Finance,2021-07-01,Hard working
+650,Bob,45.0,Chiang Mai,,Finance,2021-07-01,good team player
+651,David,25.0,,59000.0,HR,2020-12-01,Excellent work
+652,Charlie,40.0,Bangkok,55000.0,Finance,2020-12-01,
+653,Eve,29.0,Chiang Mai,62000.0,Finance,2019-03-20,excellent Work
+654,Charlie,45.0,Chiang Mai,,Finance,2021-07-01,good team player
+655,Bob,31.0,,60000.0,Finance,2020-12-01,good employee!!
+656,Alice,40.0,Phuket,47000.0,Finance,2020-01-15,average
+657,David,30.0,,45000.0,IT,2021-07-01,Very Dedicated...
+658,Alice,36.0,Bangkok,62000.0,HR,2021-07-01,Excellent work
+659,Alice,25.0,Bangkok,62000.0,HR,2019-03-20,Excellent work
+660,Alice,36.0,Chiang Mai,51000.0,Finance,2019-03-20,None
+661,David,22.0,Phuket,55000.0,IT,2020-12-01,excellent Work
+662,David,,Chiang Mai,47000.0,IT,2019-03-20,excellent Work
+663,Charlie,30.0,Bangkok,50000.0,IT,2020-12-01,
+664,Alice,22.0,Chiang Mai,50000.0,Finance,2020-12-01,
+665,David,31.0,Chiang Mai,59000.0,Finance,2020-08-15,good team player
+666,David,31.0,,51000.0,IT,2020-08-15,good team player
+667,Bob,38.0,Bangkok,47000.0,Finance,2021-07-01,needs Improvement
+668,Eve,,,52000.0,Finance,2020-08-15,Excellent Work
+669,Charlie,30.0,Phuket,48000.0,HR,2020-12-01,None
+670,Charlie,22.0,Chiang Mai,48000.0,Finance,2021-07-01,good team player
+671,David,28.0,Phuket,52000.0,IT,2019-03-20,excellent Work
+672,Alice,31.0,Phuket,52000.0,Finance,2019-03-20,Needs improvement
+673,David,40.0,Phuket,52000.0,Finance,2019-03-20,hard Working
+674,Eve,22.0,Phuket,47000.0,IT,2021-07-01,Excellent Work
+675,David,38.0,Bangkok,47000.0,Finance,2021-07-01,Good employee!!
+676,Charlie,,Bangkok,,Finance,2020-01-15,excellent Work
+677,Eve,29.0,Chiang Mai,,HR,2020-01-15,needs Improvement
+678,Alice,31.0,Chiang Mai,55000.0,IT,2020-08-15,Very dedicated...
+679,David,31.0,Chiang Mai,60000.0,IT,2020-08-15,good team player
+680,Bob,,Phuket,59000.0,IT,2020-12-01,needs Improvement
+681,Eve,28.0,,,HR,2020-08-15,good EMPLOYEE!!
+682,Eve,25.0,,45000.0,HR,2020-12-01,
+683,Bob,40.0,Chiang Mai,60000.0,IT,2020-08-15,excellent Work
+684,Charlie,40.0,Bangkok,52000.0,Finance,2020-08-15,Needs improvement
+685,Eve,30.0,Phuket,62000.0,IT,2020-12-01,Needs improvement
+686,Eve,28.0,Bangkok,47000.0,IT,2019-03-20,Good employee!!
+687,David,45.0,,60000.0,IT,2020-12-01,Average
+688,Eve,36.0,Phuket,47000.0,Finance,2020-08-15,Average
+689,David,30.0,,51000.0,Finance,2020-08-15,Good employee!!
+690,David,31.0,Chiang Mai,47000.0,IT,2020-01-15,
+691,Charlie,,Bangkok,48000.0,Finance,2020-12-01,needs Improvement
+692,Bob,30.0,Bangkok,51000.0,Finance,2020-12-01,Average
+693,Charlie,38.0,Phuket,60000.0,IT,2019-03-20,Very Dedicated...
+694,Charlie,30.0,Bangkok,47000.0,Finance,2019-03-20,Needs improvement
+695,David,45.0,Bangkok,51000.0,Finance,2020-08-15,Excellent work
+696,Charlie,29.0,,48000.0,IT,2021-07-01,Average
+697,Eve,38.0,Phuket,51000.0,IT,2020-12-01,Very dedicated...
+698,Alice,22.0,,62000.0,IT,2020-08-15,None
+699,Bob,31.0,Phuket,51000.0,HR,2019-03-20,Excellent Work
+700,Bob,38.0,,48000.0,HR,2019-03-20,excellent Work
+701,David,36.0,Chiang Mai,50000.0,HR,2019-03-20,needs Improvement
+702,Charlie,38.0,Bangkok,60000.0,HR,2019-03-20,
+703,Eve,45.0,Bangkok,60000.0,HR,2020-12-01,good team player
+704,Alice,30.0,Phuket,59000.0,IT,2020-12-01,good EMPLOYEE!!
+705,Alice,30.0,,47000.0,Finance,2020-01-15,
+706,Bob,30.0,Bangkok,47000.0,HR,2020-12-01,Very dedicated...
+707,Alice,31.0,Bangkok,47000.0,IT,2020-08-15,average
+708,David,,Chiang Mai,51000.0,IT,2020-08-15,Very Dedicated...
+709,Charlie,45.0,,50000.0,IT,2020-01-15,
+710,Bob,25.0,Phuket,55000.0,Finance,2021-07-01,excellent Work
+711,David,28.0,Phuket,52000.0,Finance,2020-08-15,good team player
+712,David,22.0,Chiang Mai,50000.0,IT,2021-07-01,excellent Work
+713,David,31.0,Bangkok,45000.0,IT,2020-08-15,
+714,David,,Bangkok,50000.0,HR,2019-03-20,Excellent Work
+715,David,45.0,Chiang Mai,52000.0,IT,2021-07-01,Very dedicated...
+716,Alice,36.0,Phuket,47000.0,IT,2020-01-15,Excellent work
+717,Eve,29.0,Chiang Mai,62000.0,Finance,2020-12-01,Excellent Work
+718,Bob,38.0,,45000.0,IT,2020-08-15,Average
+719,Charlie,22.0,Bangkok,62000.0,Finance,2020-12-01,needs Improvement
+720,Eve,40.0,Chiang Mai,59000.0,Finance,2020-01-15,Needs improvement
+721,Eve,45.0,,45000.0,HR,2021-07-01,Average
+722,David,40.0,,55000.0,Finance,2021-07-01,Hard working
+723,Alice,45.0,Phuket,60000.0,Finance,2020-01-15,hard Working
+724,Charlie,45.0,Phuket,52000.0,IT,2020-12-01,excellent Work
+725,Bob,31.0,,62000.0,Finance,2020-08-15,good team player
+726,Alice,28.0,Bangkok,62000.0,HR,2020-01-15,Excellent work
+727,Bob,28.0,Phuket,47000.0,HR,2020-08-15,good team player
+728,David,22.0,Phuket,50000.0,IT,2020-12-01,Average
+729,Alice,31.0,Chiang Mai,60000.0,HR,2019-03-20,Excellent work
+730,Charlie,,,62000.0,IT,2020-01-15,good EMPLOYEE!!
+731,Charlie,22.0,,50000.0,IT,2020-08-15,good team player
+732,Bob,28.0,,45000.0,HR,2021-07-01,average
+733,Eve,40.0,Chiang Mai,62000.0,Finance,2021-07-01,hard Working
+734,Charlie,22.0,Bangkok,,HR,2020-08-15,good team player
+735,Alice,38.0,Chiang Mai,45000.0,HR,2020-01-15,
+736,Bob,,Chiang Mai,45000.0,IT,2020-12-01,
+737,David,28.0,,50000.0,Finance,2020-01-15,good EMPLOYEE!!
+738,Charlie,29.0,,,IT,2019-03-20,excellent Work
+739,David,45.0,Phuket,45000.0,HR,2021-07-01,None
+740,David,,Bangkok,48000.0,IT,2019-03-20,Good employee!!
+741,Bob,45.0,Phuket,60000.0,HR,2020-08-15,
+742,Eve,38.0,Bangkok,48000.0,Finance,2020-08-15,Needs improvement
+743,Alice,,Phuket,50000.0,HR,2020-01-15,average
+744,David,,Bangkok,48000.0,HR,2021-07-01,Very dedicated...
+745,Alice,45.0,,48000.0,Finance,2020-08-15,
+746,Eve,22.0,Chiang Mai,60000.0,IT,2020-08-15,good team player
+747,Eve,29.0,Bangkok,59000.0,HR,2020-12-01,excellent Work
+748,Charlie,22.0,Bangkok,52000.0,Finance,2020-01-15,Excellent work
+749,Alice,30.0,Phuket,62000.0,IT,2021-07-01,good employee!!
+750,David,25.0,Phuket,59000.0,HR,2020-12-01,Excellent Work
+751,Charlie,45.0,Bangkok,52000.0,HR,2020-12-01,needs Improvement
+752,Bob,45.0,,62000.0,HR,2020-01-15,Excellent work
+753,Alice,,Chiang Mai,60000.0,HR,2020-01-15,Needs improvement
+754,Bob,36.0,,60000.0,Finance,2019-03-20,
+755,Alice,38.0,,55000.0,IT,2019-03-20,Excellent work
+756,Charlie,36.0,Phuket,50000.0,Finance,2019-03-20,hard Working
+757,David,22.0,,50000.0,IT,2020-12-01,Good employee!!
+758,Eve,25.0,Chiang Mai,,Finance,2021-07-01,good employee!!
+759,David,30.0,Phuket,55000.0,IT,2020-08-15,needs Improvement
+760,Alice,36.0,Chiang Mai,47000.0,HR,2021-07-01,None
+761,David,22.0,Chiang Mai,48000.0,Finance,2020-12-01,Very Dedicated...
+762,Bob,36.0,Phuket,52000.0,IT,2019-03-20,
+763,Eve,40.0,Phuket,,HR,2019-03-20,excellent Work
+764,Alice,45.0,,51000.0,IT,2019-03-20,hard Working
+765,David,,Bangkok,47000.0,Finance,2019-03-20,Excellent Work
+766,Eve,30.0,Bangkok,59000.0,IT,2020-01-15,good team player
+767,David,28.0,,50000.0,IT,2019-03-20,Hard working
+768,Bob,36.0,Phuket,60000.0,IT,2020-01-15,good team player
+769,Charlie,29.0,Chiang Mai,59000.0,IT,2021-07-01,Excellent Work
+770,David,22.0,Chiang Mai,47000.0,Finance,2020-01-15,Hard working
+771,Charlie,,Phuket,48000.0,Finance,2020-12-01,
+772,Alice,40.0,,48000.0,HR,2020-12-01,Needs improvement
+773,Alice,40.0,Chiang Mai,51000.0,HR,2020-01-15,
+774,Alice,36.0,Chiang Mai,60000.0,HR,2020-12-01,excellent Work
+775,Bob,30.0,Phuket,62000.0,HR,2020-12-01,needs Improvement
+776,Alice,31.0,Bangkok,47000.0,IT,2020-08-15,good employee!!
+777,David,45.0,Chiang Mai,59000.0,HR,2020-12-01,good team player
+778,Bob,38.0,Phuket,,IT,2020-08-15,
+779,David,31.0,Bangkok,50000.0,IT,2019-03-20,excellent Work
+780,Charlie,,,62000.0,HR,2020-12-01,excellent Work
+781,Bob,28.0,Chiang Mai,47000.0,IT,2020-08-15,good team player
+782,Alice,29.0,Bangkok,50000.0,Finance,2020-01-15,average
+783,Alice,31.0,Bangkok,55000.0,Finance,2020-08-15,good EMPLOYEE!!
+784,David,36.0,Phuket,62000.0,HR,2020-12-01,Excellent work
+785,Eve,36.0,Phuket,52000.0,HR,2019-03-20,good team player
+786,Alice,30.0,,52000.0,Finance,2020-08-15,good team player
+787,Charlie,45.0,Chiang Mai,62000.0,HR,2020-01-15,Excellent work
+788,Alice,,Chiang Mai,62000.0,IT,2020-12-01,Hard working
+789,Eve,,,52000.0,HR,2021-07-01,good team player
+790,David,30.0,Phuket,62000.0,HR,2019-03-20,needs Improvement
+791,Alice,25.0,Phuket,62000.0,Finance,2020-08-15,Very Dedicated...
+792,David,36.0,Chiang Mai,60000.0,Finance,2021-07-01,Excellent work
+793,Eve,36.0,Bangkok,62000.0,HR,2019-03-20,Excellent Work
+794,Alice,45.0,Chiang Mai,51000.0,HR,2021-07-01,Average
+795,Charlie,,,55000.0,IT,2020-01-15,average
+796,Alice,40.0,Bangkok,51000.0,IT,2020-08-15,Average
+797,Bob,30.0,Chiang Mai,50000.0,Finance,2020-08-15,Very dedicated...
+798,Bob,30.0,Bangkok,59000.0,Finance,2019-03-20,average
+799,Bob,30.0,Chiang Mai,50000.0,Finance,2020-08-15,
+800,Alice,25.0,Chiang Mai,59000.0,HR,2020-12-01,good employee!!
+801,David,40.0,,59000.0,IT,2019-03-20,Very Dedicated...
+802,Eve,40.0,,48000.0,Finance,2020-08-15,needs Improvement
+803,Alice,31.0,,48000.0,Finance,2019-03-20,
+804,Eve,30.0,Bangkok,50000.0,HR,2020-01-15,hard Working
+805,David,36.0,Chiang Mai,,Finance,2020-01-15,good team player
+806,Eve,36.0,Bangkok,60000.0,Finance,2019-03-20,Excellent work
+807,Alice,40.0,Bangkok,50000.0,IT,2020-01-15,Very dedicated...
+808,Eve,38.0,,52000.0,HR,2019-03-20,good team player
+809,David,40.0,Chiang Mai,51000.0,IT,2021-07-01,Excellent work
+810,David,30.0,Bangkok,,HR,2020-12-01,average
+811,Bob,29.0,Phuket,60000.0,Finance,2021-07-01,average
+812,Eve,38.0,,51000.0,HR,2021-07-01,Excellent work
+813,Eve,28.0,Bangkok,51000.0,Finance,2020-12-01,Excellent work
+814,Charlie,45.0,Phuket,62000.0,Finance,2020-08-15,needs Improvement
+815,Alice,45.0,Phuket,50000.0,Finance,2021-07-01,Very Dedicated...
+816,Alice,40.0,Bangkok,47000.0,IT,2020-08-15,good team player
+817,Eve,30.0,Chiang Mai,62000.0,Finance,2019-03-20,good employee!!
+818,David,22.0,,55000.0,Finance,2020-08-15,Excellent Work
+819,Charlie,40.0,Phuket,60000.0,HR,2020-08-15,Good employee!!
+820,David,28.0,Bangkok,47000.0,Finance,2020-08-15,
+821,David,31.0,,47000.0,Finance,2019-03-20,Excellent work
+822,Alice,28.0,Phuket,50000.0,IT,2020-12-01,None
+823,Eve,22.0,,48000.0,IT,2021-07-01,Very dedicated...
+824,Charlie,25.0,,52000.0,Finance,2020-01-15,Needs improvement
+825,Charlie,38.0,,45000.0,Finance,2020-08-15,
+826,David,31.0,Phuket,50000.0,IT,2020-08-15,good team player
+827,Bob,45.0,,47000.0,IT,2020-01-15,good team player
+828,David,45.0,Chiang Mai,47000.0,Finance,2020-01-15,
+829,Eve,38.0,Chiang Mai,51000.0,Finance,2020-12-01,needs Improvement
+830,Bob,29.0,,52000.0,HR,2021-07-01,needs Improvement
+831,Eve,31.0,,47000.0,HR,2020-01-15,Excellent work
+832,David,22.0,Phuket,47000.0,HR,2019-03-20,good EMPLOYEE!!
+833,Bob,31.0,Phuket,47000.0,HR,2021-07-01,good team player
+834,Alice,31.0,,47000.0,HR,2020-08-15,
+835,Alice,40.0,Phuket,55000.0,Finance,2019-03-20,good team player
+836,Charlie,45.0,,62000.0,HR,2021-07-01,Average
+837,Alice,28.0,Chiang Mai,52000.0,HR,2019-03-20,needs Improvement
+838,Eve,,Bangkok,62000.0,HR,2020-08-15,Excellent Work
+839,Bob,45.0,,59000.0,Finance,2020-01-15,Excellent work
+840,Alice,25.0,Phuket,52000.0,IT,2021-07-01,Needs improvement
+841,Bob,30.0,,59000.0,HR,2020-12-01,Very Dedicated...
+842,Charlie,45.0,Bangkok,55000.0,HR,2019-03-20,Excellent work
+843,Charlie,22.0,Phuket,52000.0,HR,2020-08-15,
+844,Eve,29.0,Bangkok,50000.0,IT,2020-01-15,needs Improvement
+845,Charlie,36.0,,60000.0,IT,2020-12-01,good team player
+846,Eve,22.0,,,IT,2019-03-20,hard Working
+847,Bob,45.0,Phuket,48000.0,IT,2021-07-01,excellent Work
+848,Bob,45.0,Chiang Mai,51000.0,HR,2021-07-01,average
+849,David,40.0,Chiang Mai,45000.0,HR,2020-12-01,Good employee!!
+850,Eve,40.0,Chiang Mai,52000.0,IT,2020-01-15,good employee!!
+851,David,28.0,Chiang Mai,60000.0,IT,2021-07-01,good team player
+852,Bob,31.0,Bangkok,59000.0,Finance,2020-12-01,needs Improvement
+853,Bob,38.0,Bangkok,48000.0,IT,2020-08-15,Needs improvement
+854,David,25.0,Bangkok,55000.0,HR,2020-01-15,good employee!!
+855,Eve,22.0,Phuket,,IT,2021-07-01,Excellent work
+856,Eve,36.0,Chiang Mai,62000.0,HR,2020-08-15,Needs improvement
+857,David,40.0,Chiang Mai,50000.0,Finance,2020-12-01,needs Improvement
+858,Eve,45.0,Phuket,60000.0,IT,2020-12-01,good team player
+859,David,40.0,Bangkok,45000.0,IT,2020-01-15,Very Dedicated...
+860,Eve,25.0,Chiang Mai,45000.0,IT,2020-08-15,
+861,Charlie,38.0,,48000.0,Finance,2020-12-01,good team player
+862,Alice,25.0,Bangkok,52000.0,HR,2020-08-15,
+863,Alice,31.0,Chiang Mai,48000.0,IT,2019-03-20,excellent Work
+864,Bob,22.0,,55000.0,Finance,2020-01-15,average
+865,Alice,29.0,Phuket,47000.0,HR,2021-07-01,
+866,Charlie,22.0,Bangkok,62000.0,HR,2021-07-01,Very dedicated...
+867,David,29.0,Chiang Mai,47000.0,HR,2019-03-20,good team player
+868,Bob,45.0,Chiang Mai,51000.0,Finance,2020-08-15,Excellent work
+869,Bob,28.0,Chiang Mai,55000.0,IT,2020-01-15,average
+870,Bob,40.0,Chiang Mai,50000.0,HR,2020-12-01,Hard working
+871,Eve,28.0,,47000.0,HR,2020-12-01,Very dedicated...
+872,David,25.0,Chiang Mai,52000.0,HR,2021-07-01,
+873,David,36.0,Bangkok,55000.0,Finance,2020-08-15,Excellent work
+874,Eve,28.0,Bangkok,62000.0,HR,2021-07-01,Very dedicated...
+875,Alice,36.0,Chiang Mai,60000.0,HR,2021-07-01,good employee!!
+876,Bob,45.0,Chiang Mai,55000.0,IT,2020-12-01,average
+877,Charlie,22.0,Phuket,48000.0,IT,2020-08-15,average
+878,David,36.0,Phuket,59000.0,Finance,2020-08-15,Very Dedicated...
+879,Charlie,,Phuket,60000.0,Finance,2020-12-01,Average
+880,Alice,25.0,Bangkok,51000.0,HR,2019-03-20,Excellent work
+881,Bob,29.0,Chiang Mai,47000.0,HR,2019-03-20,Excellent Work
+882,Bob,45.0,Bangkok,59000.0,IT,2021-07-01,Very Dedicated...
+883,Charlie,31.0,Phuket,60000.0,IT,2020-01-15,excellent Work
+884,Bob,40.0,,59000.0,Finance,2021-07-01,Very dedicated...
+885,David,40.0,,,Finance,2020-08-15,excellent Work
+886,Bob,31.0,Phuket,47000.0,Finance,2019-03-20,Very Dedicated...
+887,Alice,38.0,,52000.0,Finance,2019-03-20,Excellent Work
+888,Eve,25.0,Chiang Mai,50000.0,HR,2019-03-20,Average
+889,Charlie,40.0,,51000.0,Finance,2020-12-01,Needs improvement
+890,Bob,28.0,,48000.0,IT,2020-01-15,needs Improvement
+891,Alice,36.0,,50000.0,Finance,2020-12-01,Excellent work
+892,Alice,31.0,Chiang Mai,55000.0,Finance,2020-08-15,good team player
+893,Charlie,,Bangkok,51000.0,HR,2019-03-20,hard Working
+894,Charlie,36.0,Bangkok,51000.0,Finance,2020-12-01,Excellent Work
+895,Bob,45.0,Chiang Mai,59000.0,Finance,2021-07-01,Good employee!!
+896,Bob,22.0,Bangkok,51000.0,HR,2020-08-15,
+897,Bob,29.0,Phuket,60000.0,HR,2020-01-15,needs Improvement
+898,Bob,38.0,,50000.0,IT,2020-01-15,good employee!!
+899,Charlie,40.0,Phuket,45000.0,IT,2019-03-20,good team player
+900,Bob,,,45000.0,HR,2019-03-20,good team player
+901,Bob,30.0,Chiang Mai,45000.0,IT,2020-12-01,Very Dedicated...
+902,Bob,40.0,Bangkok,55000.0,Finance,2020-01-15,Very Dedicated...
+903,Charlie,29.0,Phuket,62000.0,HR,2020-08-15,good employee!!
+904,Bob,,Bangkok,47000.0,HR,2021-07-01,None
+905,Alice,38.0,Chiang Mai,,Finance,2020-08-15,good employee!!
+906,Bob,30.0,Phuket,47000.0,HR,2020-12-01,Very Dedicated...
+907,David,45.0,Bangkok,45000.0,HR,2021-07-01,Needs improvement
+908,David,36.0,Chiang Mai,62000.0,IT,2020-12-01,Good employee!!
+909,Alice,45.0,Bangkok,60000.0,IT,2020-08-15,hard Working
+910,David,45.0,Bangkok,48000.0,HR,2021-07-01,hard Working
+911,Eve,40.0,,52000.0,IT,2021-07-01,Excellent work
+912,Eve,31.0,Bangkok,55000.0,Finance,2019-03-20,good team player
+913,Charlie,29.0,Phuket,51000.0,IT,2019-03-20,needs Improvement
+914,David,38.0,Chiang Mai,52000.0,Finance,2020-08-15,excellent Work
+915,Bob,38.0,Phuket,59000.0,HR,2020-12-01,Needs improvement
+916,David,28.0,Chiang Mai,50000.0,Finance,2020-12-01,hard Working
+917,Bob,31.0,Phuket,59000.0,Finance,2021-07-01,average
+918,Charlie,30.0,,59000.0,HR,2021-07-01,Excellent work
+919,Charlie,29.0,,51000.0,IT,2020-12-01,
+920,Bob,40.0,Phuket,52000.0,HR,2020-08-15,good team player
+921,Charlie,25.0,,48000.0,Finance,2019-03-20,
+922,Charlie,38.0,Chiang Mai,47000.0,Finance,2020-01-15,excellent Work
+923,Alice,22.0,Chiang Mai,55000.0,Finance,2019-03-20,Very dedicated...
+924,Eve,25.0,,50000.0,IT,2020-12-01,
+925,Bob,22.0,Phuket,,Finance,2020-01-15,Excellent work
+926,Alice,38.0,Phuket,51000.0,IT,2021-07-01,Hard working
+927,Alice,36.0,Phuket,52000.0,IT,2020-12-01,Average
+928,Alice,29.0,Bangkok,,Finance,2020-01-15,needs Improvement
+929,Charlie,38.0,Phuket,48000.0,HR,2020-08-15,Very dedicated...
+930,Alice,40.0,Phuket,48000.0,Finance,2020-08-15,needs Improvement
+931,Charlie,25.0,Bangkok,62000.0,IT,2019-03-20,average
+932,Eve,22.0,Phuket,,IT,2020-01-15,Very Dedicated...
+933,Eve,40.0,Bangkok,52000.0,Finance,2020-01-15,
+934,Eve,31.0,Bangkok,45000.0,HR,2019-03-20,good employee!!
+935,Charlie,30.0,Bangkok,45000.0,Finance,2020-12-01,Excellent work
+936,Alice,40.0,,45000.0,Finance,2021-07-01,good team player
+937,Bob,,Bangkok,,Finance,2020-08-15,Excellent work
+938,David,45.0,,51000.0,Finance,2019-03-20,Hard working
+939,Charlie,45.0,Chiang Mai,,IT,2020-12-01,needs Improvement
+940,David,30.0,Chiang Mai,59000.0,IT,2020-12-01,good team player
+941,David,30.0,Chiang Mai,45000.0,HR,2020-12-01,Excellent Work
+942,Charlie,29.0,Chiang Mai,48000.0,HR,2019-03-20,needs Improvement
+943,Eve,31.0,Phuket,52000.0,HR,2020-12-01,good team player
+944,Bob,30.0,Phuket,47000.0,HR,2020-12-01,Needs improvement
+945,David,38.0,,51000.0,IT,2019-03-20,needs Improvement
+946,Alice,30.0,Bangkok,48000.0,IT,2019-03-20,average
+947,Eve,29.0,Phuket,59000.0,IT,2019-03-20,good EMPLOYEE!!
+948,Bob,22.0,,55000.0,IT,2020-01-15,Excellent work
+949,Bob,31.0,Bangkok,59000.0,IT,2020-08-15,Very Dedicated...
+950,Alice,30.0,,51000.0,IT,2019-03-20,Very Dedicated...
+951,David,,Phuket,,Finance,2019-03-20,Very Dedicated...
+952,Bob,,Chiang Mai,60000.0,HR,2019-03-20,Good employee!!
+953,Bob,40.0,,62000.0,Finance,2020-01-15,Very Dedicated...
+954,Charlie,31.0,Chiang Mai,,HR,2019-03-20,average
+955,Charlie,28.0,Chiang Mai,50000.0,IT,2020-01-15,excellent Work
+956,Bob,29.0,Bangkok,,IT,2019-03-20,Good employee!!
+957,Bob,,Phuket,59000.0,HR,2020-12-01,Good employee!!
+958,Bob,28.0,Phuket,45000.0,HR,2021-07-01,None
+959,Charlie,25.0,,52000.0,HR,2019-03-20,Hard working
+960,Charlie,22.0,Bangkok,50000.0,Finance,2020-08-15,needs Improvement
+961,Bob,40.0,Phuket,48000.0,Finance,2021-07-01,None
+962,Eve,45.0,Bangkok,45000.0,Finance,2020-12-01,Excellent work
+963,Charlie,29.0,,50000.0,Finance,2020-08-15,Excellent Work
+964,Alice,40.0,Bangkok,45000.0,HR,2020-12-01,good team player
+965,Charlie,28.0,Chiang Mai,55000.0,HR,2020-08-15,Very dedicated...
+966,Bob,31.0,Bangkok,45000.0,IT,2021-07-01,Average
+967,Eve,40.0,Chiang Mai,51000.0,IT,2020-12-01,None
+968,Eve,31.0,Chiang Mai,45000.0,HR,2020-12-01,Very Dedicated...
+969,David,40.0,Bangkok,60000.0,Finance,2020-12-01,good team player
+970,Charlie,22.0,Chiang Mai,47000.0,HR,2021-07-01,Needs improvement
+971,David,38.0,Chiang Mai,60000.0,Finance,2019-03-20,Needs improvement
+972,Charlie,40.0,Chiang Mai,60000.0,IT,2020-08-15,None
+973,Bob,,,50000.0,HR,2020-01-15,Good employee!!
+974,Alice,22.0,Bangkok,48000.0,HR,2021-07-01,Needs improvement
+975,Bob,38.0,Chiang Mai,47000.0,Finance,2020-08-15,Good employee!!
+976,Alice,31.0,,52000.0,Finance,2020-08-15,needs Improvement
+977,Alice,36.0,Phuket,59000.0,Finance,2020-12-01,Needs improvement
+978,Bob,29.0,Bangkok,60000.0,HR,2020-08-15,Good employee!!
+979,Eve,40.0,Chiang Mai,45000.0,IT,2019-03-20,
+980,Eve,45.0,,51000.0,HR,2020-12-01,None
+981,David,29.0,Bangkok,,HR,2020-12-01,hard Working
+982,Alice,36.0,,55000.0,HR,2021-07-01,good employee!!
+983,Eve,,Bangkok,62000.0,HR,2021-07-01,hard Working
+984,David,28.0,Chiang Mai,50000.0,IT,2020-12-01,Excellent work
+985,Bob,22.0,Phuket,,IT,2020-12-01,needs Improvement
+986,Alice,30.0,Bangkok,48000.0,Finance,2020-01-15,Needs improvement
+987,Bob,38.0,,50000.0,Finance,2020-01-15,Excellent work
+988,Alice,28.0,Phuket,51000.0,Finance,2020-01-15,Excellent Work
+989,Bob,,Phuket,52000.0,IT,2020-01-15,good team player
+990,Alice,25.0,Phuket,59000.0,Finance,2020-01-15,Good employee!!
+991,Eve,25.0,Chiang Mai,47000.0,HR,2020-01-15,Very dedicated...
+992,David,30.0,Chiang Mai,52000.0,HR,2020-01-15,excellent Work
+993,Alice,,Bangkok,50000.0,Finance,2020-08-15,Very Dedicated...
+994,Bob,22.0,,50000.0,HR,2019-03-20,good team player
+995,Charlie,45.0,Phuket,55000.0,IT,2019-03-20,Excellent Work
+996,Eve,,Phuket,47000.0,HR,2020-01-15,Good employee!!
+997,Eve,45.0,Chiang Mai,50000.0,IT,2020-01-15,Very Dedicated...
+998,Bob,40.0,,59000.0,IT,2020-08-15,Very dedicated...
+999,Alice,30.0,Phuket,55000.0,Finance,2021-07-01,good team player
+1000,Charlie,30.0,Bangkok,47000.0,IT,2020-01-15,
