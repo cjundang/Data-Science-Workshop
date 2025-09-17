@@ -1,16 +1,14 @@
- 
+ # ชั่วโมงที่ 1 – การได้มาซึ่งข้อมูลและการจัดการ
 
-# **ชั่วโมงที่ 1 – การได้มาซึ่งข้อมูลและการจัดการ**
+## ความรู้เบื้องต้น
 
-## Background
-
-1. บทนำสู่การได้มาซึ่งข้อมูล (Introduction to Data Acquisition)
+1. **บทนำสู่การได้มาซึ่งข้อมูล (Introduction to Data Acquisition)**
 
 * **ความหมาย**: กระบวนการนำข้อมูลดิบมาจากแหล่งต่าง ๆ เพื่อนำไปวิเคราะห์
 * **ความสำคัญ**: คุณภาพและความหลากหลายของแหล่งข้อมูลมีผลโดยตรงต่อความแข็งแรงของข้อสรุปและการวิเคราะห์
  
 
-2. แหล่งข้อมูลทั่วไป (Common Data Sources)
+2. **แหล่งข้อมูลทั่วไป (Common Data Sources)**
 
 * **ชุดข้อมูลสาธารณะ (Open datasets)**: Kaggle, UCI ML Repository, พอร์ทัลข้อมูลภาครัฐ
 * **APIs**: REST APIs (ผลลัพธ์ในรูปแบบ JSON/CSV), GraphQL APIs
@@ -21,17 +19,16 @@
   * **NoSQL** – ฐานข้อมูลแบบเอกสาร (MongoDB), แบบคีย์-ค่า, หรือฐานข้อมูลกราฟ
  
 
-3. ประเด็นสำคัญที่ควรพิจารณา (Key Considerations)
+3. **ประเด็นสำคัญที่ควรพิจารณา (Key Considerations)**
 
 * รูปแบบข้อมูล: CSV, JSON, XML, Parquet, Avro
 * วิธีการเข้าถึง: HTTP requests, connectors (เช่น SQLAlchemy, pymongo)
 * **ประเด็นด้านจริยธรรม**: เคารพข้อตกลงการให้บริการ สิทธิ์การใช้งาน และความเป็นส่วนตัว
 
  
-
 ## Hands-On Exercises
 
-### **A. การนำเข้าข้อมูลจาก CSV**
+### A. การนำเข้าข้อมูลจาก CSV
 
 **วัตถุประสงค์**: ทำงานกับข้อมูลเชิงตารางที่พบได้บ่อย
 
@@ -47,14 +44,11 @@ print(df_csv.info())
 print(df_csv.describe())
 ```
 
- 
-
-### **B. การดึงข้อมูลจาก Open API**
+### B. การดึงข้อมูลจาก Open API
 
 **วัตถุประสงค์**: สอนนักศึกษาให้สามารถดึงข้อมูลสดจาก API และโหลดเข้าสู่ pandas
 
-#### ตัวอย่าง: OpenWeather API (ต้องใช้ API key ฟรี)
-
+**ตัวอย่าง: OpenWeather API (ต้องใช้ API key ฟรี)**
 ```python
 import requests
 import pandas as pd
@@ -88,12 +82,12 @@ print(df_weather)
 * การแปลง JSON เป็นตาราง DataFrame ของ pandas
 
 
-### **C. การนำเข้าข้อมูลจาก WebAPI** 
+#### C. การนำเข้าข้อมูลจาก WebAPI
  
-* เว็บไซต์ **AQICN** มี API สำหรับดึงข้อมูลคุณภาพอากาศจากสถานีต่าง ๆ เช่น สถานีกรุงเทพฯ (Bangkok) ([aqicn.org][1])
-* ต้องมี “token” (API key) ที่ลงทะเบียนกับทาง Data Platform ของ WAQI ก่อนถึงจะเรียก API ได้ ([aqicn.org][1])
+* เว็บไซต์ **AQICN** มี API สำหรับดึงข้อมูลคุณภาพอากาศจากสถานีต่าง ๆ เช่น สถานีกรุงเทพฯ (Bangkok) 
+* ต้องมี “token” (API key) ที่ลงทะเบียนกับทาง Data Platform ของ WAQI ก่อนถึงจะเรียก API ได้  
 
-### โค้ดตัวอย่างใน Python
+**โค้ดตัวอย่างใน Python**
 
 ```python
 import requests
@@ -138,7 +132,7 @@ df_aqi = fetch_aqi_bangkok(YOUR_TOKEN)
 print(df_aqi)
 ```
  
- ### **C. การใช้ GET API ใน Google Sheets**
+#### C. การใช้ GET API ใน Google Sheets
 
 1. **ทำไมต้องใช้ Google Sheets?**
 
@@ -157,14 +151,14 @@ print(df_aqi)
    * แดชบอร์ดติดตาม COVID-19
 
 
-#### **สคริปต์ปฏิบัติ (Hands-On Script)**
+**สคริปต์ปฏิบัติ (Hands-On Script)**
 
-#### ขั้นตอนที่ 1: เปิด Script Editor ของ Google Sheets
+1. เปิด Script Editor ของ Google Sheets
 
 * ไปที่ **Extensions > Apps Script**
 * นำโค้ดด้านล่างไปแทนที่โค้ดเดิม
 
-#### ขั้นตอนที่ 2: ตัวอย่าง – ดึงข้อมูลจาก OpenWeather API
+2. ตัวอย่าง – ดึงข้อมูลจาก OpenWeather API
 
 ```javascript
 function getWeatherData() {
@@ -196,13 +190,13 @@ function getWeatherData() {
 }
 ```
 
-### ขั้นตอนที่ 3: รันสคริปต์
+3. รันสคริปต์
 
 * กดบันทึก → คลิก **Run** → อนุญาตการเข้าถึง (grant permissions)
 * Google Sheet จะถูกเติมข้อมูลสภาพอากาศสดทันที
 
 
-### ขั้นตอนที่ 4:  ตั้งค่ารีเฟรชอัตโนมัติทุกชั่วโมง
+4. ตั้งค่ารีเฟรชอัตโนมัติทุกชั่วโมง
 
 เพิ่ม trigger ใน Apps Script:
 
@@ -212,8 +206,7 @@ function getWeatherData() {
 
 ทำให้ชีตอัปเดตข้อมูลอัตโนมัติทุกชั่วโมง
  
- 
-### *** D. Google Sheets as Web API (Database-like)***
+**Google Sheets as Web API (Database-like)**
 
 **แนวคิด**
 
@@ -234,13 +227,13 @@ function getWeatherData() {
    * API ให้กับ dashboard หรือ mobile app
 
 
-#### **โค้ดตัวอย่าง (Apps Script)**
+**โค้ดตัวอย่าง (Apps Script)**
 
-##### Step 1: เปิด Script Editor
+1. เปิด Script Editor
 
 * Google Sheets → **Extensions > Apps Script**
 
-##### Step 2: ใส่โค้ด
+2. ใส่โค้ด
 
 ```javascript
 // ฟังก์ชันเมื่อมีการเรียก GET API
@@ -277,15 +270,14 @@ function doPost(e) {
 }
 ```
 
+**การใช้งาน**
 
-#### **การใช้งาน**
-
-##### 1. Deploy Web App
+1. Deploy Web App
 
 * ไปที่ **Deploy > New Deployment > Web App**
 * เลือก **Anyone with the link** → Copy URL
 
-##### 2. เรียกใช้ API
+2. เรียกใช้ API
 
 * **GET ข้อมูลทั้งหมด**
 
@@ -302,7 +294,7 @@ function doPost(e) {
   "https://script.google.com/macros/s/xxxxxx/exec"
   ```
 
-##### **ตัวอย่างการตอบกลับ JSON (GET)**
+**ตัวอย่างการตอบกลับ JSON (GET)**
 
 ```json
 [
@@ -312,13 +304,13 @@ function doPost(e) {
 ```
  
 
-### **Python Demo: ใช้ Google Sheet เป็น Database ผ่าน Web API**
+**Python Demo: ใช้ Google Sheet เป็น Database ผ่าน Web API**
 
 > ⚠️ ก่อนเริ่ม: ต้อง Deploy Google Apps Script เป็น **Web App (Anyone with the link)** แล้ว copy URL เช่น
 > `https://script.google.com/macros/s/AKfycbxxxxx/exec`
  
 
-#### **1. GET: ดึงข้อมูลทั้งหมดจาก Google Sheet**
+1. GET: ดึงข้อมูลทั้งหมดจาก Google Sheet
 
 ```python
 import requests
@@ -347,7 +339,7 @@ else:
 1    Bob    30  Chiang Mai
 ```
 
-##### **2. POST: เพิ่มข้อมูลใหม่ลงในชีต**
+2. POST: เพิ่มข้อมูลใหม่ลงในชีต
 
 ```python
 import requests
