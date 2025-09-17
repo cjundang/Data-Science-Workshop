@@ -1,52 +1,56 @@
+ 
 
-# **Hour 1 – Data Acquisition & Management**
+# **ชั่วโมงที่ 1 – การได้มาซึ่งข้อมูลและการจัดการ (Data Acquisition & Management)**
 
-### 1. Introduction to Data Acquisition
+### 1. บทนำสู่การได้มาซึ่งข้อมูล (Introduction to Data Acquisition)
 
-* **Definition**: The process of obtaining raw data from different sources for analysis.
-* **Why it matters**: The quality and diversity of data sources influence the strength of your insights.
+* **ความหมาย**: กระบวนการนำข้อมูลดิบมาจากแหล่งต่าง ๆ เพื่อนำไปวิเคราะห์
+* **ความสำคัญ**: คุณภาพและความหลากหลายของแหล่งข้อมูลมีผลโดยตรงต่อความแข็งแรงของข้อสรุปและการวิเคราะห์
+ 
 
-### 2. Common Data Sources
+### 2. แหล่งข้อมูลทั่วไป (Common Data Sources)
 
-* **Open datasets**: Kaggle, UCI ML Repository, government open data portals.
-* **APIs**: REST APIs (JSON/CSV responses), GraphQL APIs.
-* **Web scraping**: Extracting structured/unstructured data from websites (legal/ethical caveats).
-* **Databases**:
+* **ชุดข้อมูลสาธารณะ (Open datasets)**: Kaggle, UCI ML Repository, พอร์ทัลข้อมูลภาครัฐ
+* **APIs**: REST APIs (ผลลัพธ์ในรูปแบบ JSON/CSV), GraphQL APIs
+* **Web scraping**: การดึงข้อมูลที่มีโครงสร้างและไม่มีโครงสร้างจากเว็บไซต์ (ต้องคำนึงถึงข้อกฎหมาย/จริยธรรม)
+* **ฐานข้อมูล (Databases)**:
 
-  * **Relational (SQL)**: structured, tabular data, queried with SQL.
-  * **NoSQL**: document-based (MongoDB), key-value stores, graph databases.
+  * **ฐานข้อมูลเชิงสัมพันธ์ (Relational: SQL)** – ข้อมูลเชิงตารางแบบมีโครงสร้าง ใช้ SQL ในการดึงข้อมูล
+  * **NoSQL** – ฐานข้อมูลแบบเอกสาร (MongoDB), แบบคีย์-ค่า, หรือฐานข้อมูลกราฟ
+ 
 
-### 3. Key Considerations
+### 3. ประเด็นสำคัญที่ควรพิจารณา (Key Considerations)
 
-* Data format: CSV, JSON, XML, Parquet, Avro.
-* Access method: HTTP requests, connectors (SQLAlchemy, pymongo).
-* **Ethical aspects**: respect terms of service, licensing, and privacy.
+* รูปแบบข้อมูล: CSV, JSON, XML, Parquet, Avro
+* วิธีการเข้าถึง: HTTP requests, connectors (เช่น SQLAlchemy, pymongo)
+* **ประเด็นด้านจริยธรรม**: เคารพข้อตกลงการให้บริการ สิทธิ์การใช้งาน และความเป็นส่วนตัว
 
+ 
 
-## **Hands-On Exercises (40 min)**
+## **กิจกรรมปฏิบัติ (Hands-On Exercises) – 40 นาที**
 
-### **A. Querying an Open API**
+### **A. การดึงข้อมูลจาก Open API**
 
-**Objective**: Teach students how to fetch live data from an API and load it into pandas.
+**วัตถุประสงค์**: สอนนักศึกษาให้สามารถดึงข้อมูลสดจาก API และโหลดเข้าสู่ pandas
 
-#### Example: OpenWeather API (requires free API key)
+#### ตัวอย่าง: OpenWeather API (ต้องใช้ API key ฟรี)
 
 ```python
 import requests
 import pandas as pd
 
-# Example: Weather data for Bangkok
-API_KEY = "YOUR_API_KEY"  # teacher prepares ahead
+# ตัวอย่าง: ดึงข้อมูลสภาพอากาศของกรุงเทพฯ
+API_KEY = "YOUR_API_KEY"  # เตรียม API key ล่วงหน้า
 city = "Bangkok"
 url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
 
 response = requests.get(url)
 data = response.json()
 
-# Inspect raw JSON
+# ดูข้อมูล JSON ที่ได้มา
 print(data)
 
-# Convert selected fields to pandas DataFrame
+# แปลงบางฟิลด์มาเก็บใน pandas DataFrame
 weather = {
     "city": data["name"],
     "temperature": data["main"]["temp"],
@@ -57,76 +61,78 @@ df_weather = pd.DataFrame([weather])
 print(df_weather)
 ```
 
-**Key teaching points**:
+**ประเด็นสอนสำคัญ**:
 
-* Structure of JSON data
-* Extracting nested fields
-* Transforming JSON into tabular pandas DataFrame
+* โครงสร้างข้อมูล JSON
+* วิธีการดึงค่าจากฟิลด์ที่ซ้อนกัน
+* การแปลง JSON เป็นตาราง DataFrame ของ pandas
 
+ 
 
-### **B. Importing CSV Data**
+### **B. การนำเข้าข้อมูลจาก CSV**
 
-**Objective**: Work with common tabular data.
+**วัตถุประสงค์**: ทำงานกับข้อมูลเชิงตารางที่พบได้บ่อย
 
 ```python
 import pandas as pd
 
-# Load dataset from local CSV
+# โหลดข้อมูลจากไฟล์ CSV
 df_csv = pd.read_csv("sample_data.csv")
 
-# Explore dataset
+# สำรวจข้อมูล
 print(df_csv.head())
 print(df_csv.info())
 print(df_csv.describe())
 ```
 
+ 
+### **C. การนำเข้าข้อมูลจาก SQL**
 
-### **C. Importing SQL Data**
-
-**Objective**: Teach SQL integration with Python.
+**วัตถุประสงค์**: แสดงการเชื่อม SQL เข้ากับ Python
 
 ```python
 import sqlite3
 import pandas as pd
 
-# Create connection to SQLite database
+# เชื่อมต่อกับฐานข้อมูล SQLite
 conn = sqlite3.connect("sample_db.sqlite")
 
-# Example query
+# ดึงข้อมูลตัวอย่าง
 query = "SELECT * FROM customers LIMIT 10;"
 df_sql = pd.read_sql_query(query, conn)
 
 print(df_sql.head())
 conn.close()
 ```
+ 
 
+### **D. การนำเข้าข้อมูลจาก NoSQL (MongoDB)**
 
-### **D. Importing NoSQL Data (MongoDB)**
-
-**Objective**: Demonstrate connection to a document database.
+**วัตถุประสงค์**: สาธิตการเชื่อมต่อฐานข้อมูลแบบเอกสาร
 
 ```python
 from pymongo import MongoClient
 import pandas as pd
 
-# Connect to MongoDB (ensure MongoDB is running or use MongoDB Atlas)
+# เชื่อมต่อ MongoDB (ต้องเปิด MongoDB ไว้ หรือใช้ MongoDB Atlas)
 client = MongoClient("mongodb://localhost:27017/")
 db = client["sample_db"]
 collection = db["customers"]
 
-# Fetch first 10 documents
+# ดึงเอกสารตัวอย่าง 10 รายการแรก
 docs = list(collection.find().limit(10))
 
-# Convert to DataFrame
+# แปลงเป็น DataFrame
 df_nosql = pd.DataFrame(docs)
 print(df_nosql.head())
 ```
 
  
-## **Wrap-up Discussion (5 min)**
 
-* Differences in importing from **CSV vs SQL vs NoSQL vs APIs**
-* Advantages/disadvantages of each source (e.g., structured vs unstructured, static vs dynamic)
-* Best practices: documenting sources, ensuring reproducibility, data governance.
+## **อภิปรายสรุป (Wrap-up Discussion) – 5 นาที**
+
+* ความแตกต่างของการนำเข้าข้อมูลจาก **CSV, SQL, NoSQL และ APIs**
+* ข้อดี/ข้อจำกัดของแต่ละแหล่งข้อมูล (เช่น ข้อมูลที่มีโครงสร้าง vs ไม่มีโครงสร้าง, คงที่ vs แบบเรียลไทม์)
+* แนวปฏิบัติที่ดี: การบันทึกที่มาของข้อมูล การทำให้ซ้ำได้ (reproducibility) และการกำกับดูแลข้อมูล (data governance)
 
  
