@@ -210,17 +210,10 @@ function getWeatherData() {
 
 ทำให้ชีตอัปเดตข้อมูลอัตโนมัติทุกชั่วโมง
  
+ 
+### *** D. Google Sheets as Web API (Database-like)***
 
-เข้าใจครับ 🙌
-คุณอยากได้ **Apps Script ที่ทำให้ Google Sheet ทำงานเสมือนฐานข้อมูล และเปิดให้เรียกใช้ผ่าน Web API (GET/POST)** ได้ — เหมือนทำให้ชีตกลายเป็น backend เล็ก ๆ สำหรับดึง/เพิ่มข้อมูล
-
-นี่คือตัวอย่างสคริปต์ **Google Apps Script** ที่ทำหน้าที่ให้ Google Sheets เป็น Web API
-
----
-
-### ** D. Google Sheets as Web API (Database-like)**
-
-### **แนวคิดการบรรยาย (Mini-Lecture 10 นาที)**
+**แนวคิด**
 
 1. **Google Sheets = Lightweight Database**
 
@@ -239,14 +232,13 @@ function getWeatherData() {
    * API ให้กับ dashboard หรือ mobile app
 
 
+#### **โค้ดตัวอย่าง (Apps Script)**
 
-### **โค้ดตัวอย่าง (Apps Script)**
-
-#### Step 1: เปิด Script Editor
+##### Step 1: เปิด Script Editor
 
 * Google Sheets → **Extensions > Apps Script**
 
-#### Step 2: ใส่โค้ด
+##### Step 2: ใส่โค้ด
 
 ```javascript
 // ฟังก์ชันเมื่อมีการเรียก GET API
@@ -284,14 +276,14 @@ function doPost(e) {
 ```
 
 
-### **การใช้งาน**
+#### **การใช้งาน**
 
-#### 1. Deploy Web App
+##### 1. Deploy Web App
 
 * ไปที่ **Deploy > New Deployment > Web App**
 * เลือก **Anyone with the link** → Copy URL
 
-#### 2. เรียกใช้ API
+##### 2. เรียกใช้ API
 
 * **GET ข้อมูลทั้งหมด**
 
@@ -308,7 +300,7 @@ function doPost(e) {
   "https://script.google.com/macros/s/xxxxxx/exec"
   ```
 
-#### **ตัวอย่างการตอบกลับ JSON (GET)**
+##### **ตัวอย่างการตอบกลับ JSON (GET)**
 
 ```json
 [
@@ -316,5 +308,67 @@ function doPost(e) {
   {"name":"Bob","age":30,"city":"Chiang Mai"}
 ]
 ```
+ 
 
+### **Python Demo: ใช้ Google Sheet เป็น Database ผ่าน Web API**
 
+> ⚠️ ก่อนเริ่ม: ต้อง Deploy Google Apps Script เป็น **Web App (Anyone with the link)** แล้ว copy URL เช่น
+> `https://script.google.com/macros/s/AKfycbxxxxx/exec`
+ 
+
+#### **1. GET: ดึงข้อมูลทั้งหมดจาก Google Sheet**
+
+```python
+import requests
+import pandas as pd
+
+# URL ที่ได้จากการ deploy Apps Script
+BASE_URL = "https://script.google.com/macros/s/AKfycbxxxxx/exec"
+
+# เรียก GET
+response = requests.get(BASE_URL)
+
+if response.status_code == 200:
+    data = response.json()
+    # แปลงเป็น DataFrame เพื่อดูเป็นตาราง
+    df = pd.DataFrame(data)
+    print(df)
+else:
+    print("Error:", response.status_code, response.text)
+```
+
+✅ ผลลัพธ์จะเป็นข้อมูลจากชีตในรูปแบบ pandas DataFrame เช่น:
+
+```
+    name   age       city
+0  Alice    25   Bangkok
+1    Bob    30  Chiang Mai
+```
+
+##### **2. POST: เพิ่มข้อมูลใหม่ลงในชีต**
+
+```python
+import requests
+
+# URL ของ Web App
+BASE_URL = "https://script.google.com/macros/s/AKfycbxxxxx/exec"
+
+# JSON ที่ต้องการเพิ่ม
+new_data = {
+    "name": "Charlie",
+    "age": 28,
+    "city": "Phuket"
+}
+
+# ส่ง POST
+response = requests.post(BASE_URL, json=new_data)
+
+if response.status_code == 200:
+    print("Response:", response.json())
+else:
+    print("Error:", response.status_code, response.text)
+```
+
+เมื่อรันแล้ว Google Sheet จะมีข้อมูลแถวใหม่เพิ่มทันที เช่น `Charlie | 28 | Phuket`
+
+ 
