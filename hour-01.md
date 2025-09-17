@@ -52,11 +52,12 @@ print(df_csv.describe())
 ```python
 import requests
 import pandas as pd
+from google.colab import userdata
 
 # ตัวอย่าง: ดึงข้อมูลสภาพอากาศของกรุงเทพฯ
-API_KEY = "YOUR_API_KEY"  # เตรียม API key ล่วงหน้า
 city = "Bangkok"
-url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+OPEN_API_KEY = userdata.get('OPEN_API_KEY')
+url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={OPEN_API_KEY}&units=metric"
 
 response = requests.get(url)
 data = response.json()
@@ -93,9 +94,8 @@ print(df_weather)
 import requests
 import pandas as pd
 
-def fetch_aqi_bangkok(token):
+def fetch_aqi_bangkok(station_id, token):
     # URL ของ API
-    station_id = "5773"  # Bangkok station (WAQI)
     url = f"https://api.waqi.info/feed/@{station_id}/?token={token}"
     
     # เรียก API
@@ -127,8 +127,18 @@ def fetch_aqi_bangkok(token):
     
     return df
 
-YOUR_TOKEN = "ใส่โทเค็นของคุณที่นี่"
-df_aqi = fetch_aqi_bangkok(YOUR_TOKEN)
+# Used to securely store your API key
+from google.colab import userdata
+
+# Replace 'WAQI_YOUR_TOKEN' with the name you used for the secret in Colab
+WAQI_YOUR_TOKEN = userdata.get('WAQI_YOUR_TOKEN')
+
+# Now you can use WAQI_YOUR_TOKEN in your code
+print(WAQI_YOUR_TOKEN)
+
+# WAQI_YOUR_TOKEN = "ใส่โทเค็นของคุณที่นี่"
+station_id = "5773"  # Bangkok station (WAQI)
+df_aqi = fetch_aqi_bangkok(station_id, WAQI_YOUR_TOKEN)
 print(df_aqi)
 ```
  
@@ -206,7 +216,7 @@ function getWeatherData() {
 
 ทำให้ชีตอัปเดตข้อมูลอัตโนมัติทุกชั่วโมง
  
-**Google Sheets as Web API (Database-like)**
+#### D. Google Sheets as Web API (Database-like)
 
 **แนวคิด**
 
