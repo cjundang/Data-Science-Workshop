@@ -1,14 +1,16 @@
  
 
-# **ชั่วโมงที่ 1 – การได้มาซึ่งข้อมูลและการจัดการ (Data Acquisition & Management)**
+# **ชั่วโมงที่ 1 – การได้มาซึ่งข้อมูลและการจัดการ**
 
-### 1. บทนำสู่การได้มาซึ่งข้อมูล (Introduction to Data Acquisition)
+## Background
+
+1. บทนำสู่การได้มาซึ่งข้อมูล (Introduction to Data Acquisition)
 
 * **ความหมาย**: กระบวนการนำข้อมูลดิบมาจากแหล่งต่าง ๆ เพื่อนำไปวิเคราะห์
 * **ความสำคัญ**: คุณภาพและความหลากหลายของแหล่งข้อมูลมีผลโดยตรงต่อความแข็งแรงของข้อสรุปและการวิเคราะห์
  
 
-### 2. แหล่งข้อมูลทั่วไป (Common Data Sources)
+2. แหล่งข้อมูลทั่วไป (Common Data Sources)
 
 * **ชุดข้อมูลสาธารณะ (Open datasets)**: Kaggle, UCI ML Repository, พอร์ทัลข้อมูลภาครัฐ
 * **APIs**: REST APIs (ผลลัพธ์ในรูปแบบ JSON/CSV), GraphQL APIs
@@ -19,7 +21,7 @@
   * **NoSQL** – ฐานข้อมูลแบบเอกสาร (MongoDB), แบบคีย์-ค่า, หรือฐานข้อมูลกราฟ
  
 
-### 3. ประเด็นสำคัญที่ควรพิจารณา (Key Considerations)
+3. ประเด็นสำคัญที่ควรพิจารณา (Key Considerations)
 
 * รูปแบบข้อมูล: CSV, JSON, XML, Parquet, Avro
 * วิธีการเข้าถึง: HTTP requests, connectors (เช่น SQLAlchemy, pymongo)
@@ -27,7 +29,7 @@
 
  
 
-### **กิจกรรมปฏิบัติ (Hands-On Exercises) – 40 นาที**
+## Hands-On Exercises
 
 ### **A. การนำเข้าข้อมูลจาก CSV**
 
