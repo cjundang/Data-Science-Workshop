@@ -300,8 +300,8 @@ function doPost(e) {
   ```bash
   curl -X POST \
   -H "Content-Type: application/json" \
-  -d '{"name":"Alice","age":25,"city":"Bangkok"}' \
-  "https://script.google.com/macros/s/xxxxxx/exec"
+  -d '{"City": "Bangkok","Temperature (C): "29.58", "Humidity (%)": "76", "Description": "light rain"}' \
+  "https://script.google.com/macros/s/AKfycbysX7pzUoonuNAHdxa5evl6MP-NV6pnI_kAAYlm_bqdT-E0QfWkHV05wtKOPrYkdib9mQ/exec"
   ```
 
 **ตัวอย่างการตอบกลับ JSON (GET)**
