@@ -27,7 +27,7 @@
 
  
 
-## **กิจกรรมปฏิบัติ (Hands-On Exercises) – 40 นาที**
+### **กิจกรรมปฏิบัติ (Hands-On Exercises) – 40 นาที**
 
 ### **A. การดึงข้อมูลจาก Open API**
 
@@ -86,47 +86,82 @@ print(df_csv.describe())
 ```
 
  
-### **C. การนำเข้าข้อมูลจาก SQL**
 
-**วัตถุประสงค์**: แสดงการเชื่อม SQL เข้ากับ Python
-
-```python
-import sqlite3
-import pandas as pd
-
-# เชื่อมต่อกับฐานข้อมูล SQLite
-conn = sqlite3.connect("sample_db.sqlite")
-
-# ดึงข้อมูลตัวอย่าง
-query = "SELECT * FROM customers LIMIT 10;"
-df_sql = pd.read_sql_query(query, conn)
-
-print(df_sql.head())
-conn.close()
-```
+### **C. การนำเข้าข้อมูลจาก WebAPI** 
  
+ตัวอย่างการอ่านข้อมูลฝุ่น (PM2.5 / AQI) ประเทศไทยแบบเรียลไทม์โดยใช้ API จากระบบ WAQI (World Air Quality Index) ผ่านเว็บไซต์ aqicn.org แล้วใช้ Python โค้ดในการดึงข้อมูลมาใช้งานครับ
 
-### **D. การนำเข้าข้อมูลจาก NoSQL (MongoDB)**
+---
 
-**วัตถุประสงค์**: สาธิตการเชื่อมต่อฐานข้อมูลแบบเอกสาร
+## ข้อมูลเบื้องต้น
 
-```python
-from pymongo import MongoClient
-import pandas as pd
+* เว็บไซต์ **AQICN** มี API สำหรับดึงข้อมูลคุณภาพอากาศจากสถานีต่าง ๆ เช่น สถานีกรุงเทพฯ (Bangkok) ([aqicn.org][1])
+* ต้องมี “token” (API key) ที่ลงทะเบียนกับทาง Data Platform ของ WAQI ก่อนถึงจะเรียก API ได้ ([aqicn.org][1])
 
-# เชื่อมต่อ MongoDB (ต้องเปิด MongoDB ไว้ หรือใช้ MongoDB Atlas)
-client = MongoClient("mongodb://localhost:27017/")
-db = client["sample_db"]
-collection = db["customers"]
+---
 
-# ดึงเอกสารตัวอย่าง 10 รายการแรก
-docs = list(collection.find().limit(10))
+## โครงสร้าง API ตัวอย่าง
 
-# แปลงเป็น DataFrame
-df_nosql = pd.DataFrame(docs)
-print(df_nosql.head())
+URL แบบพื้นฐาน:
+
+```
+https://api.waqi.info/feed/@5773/?token=YOUR_TOKEN
 ```
 
+* `@5773` คือ identifier ของสถานีวัดคุณภาพอากาศกรุงเทพฯ ([aqicn.org][1])
+* `token` ใส่ API key ของเราเอง
+
+ตัว API จะคืนข้อมูล JSON ที่มีฟิลด์ต่าง ๆ เช่น ค่าของ PM2.5, PM10, สถานะคุณภาพอากาศ (AQI), ถ้ามี …
+
+---
+
+## โค้ดตัวอย่างใน Python
+
+```python
+import requests
+import pandas as pd
+
+def fetch_aqi_bangkok(token):
+    # URL ของ API
+    station_id = "5773"  # Bangkok station (WAQI)
+    url = f"https://api.waqi.info/feed/@{station_id}/?token={token}"
+    
+    # เรียก API
+    response = requests.get(url)
+    if response.status_code != 200:
+        raise Exception(f"Error fetching data: HTTP {response.status_code}")
+    
+    data = response.json()
+    if data.get("status") != "ok":
+        raise Exception(f"Error in API response: {data.get('data')}")
+    
+    # ดึงค่าที่สนใจ
+    aqi = data["data"].get("aqi")
+    dominent_pollutant = data["data"].get("dominentpol")
+    iaqi = data["data"].get("iaqi", {})
+    pm25 = iaqi.get("pm25", {}).get("v")  # ถ้ามี
+    pm10 = iaqi.get("pm10", {}).get("v")
+    time = data["data"].get("time", {}).get("s")
+    
+    # สร้าง DataFrame
+    df = pd.DataFrame([{
+        "station": "Bangkok",
+        "time": time,
+        "AQI": aqi,
+        "Dominant Pollutant": dominent_pollutant,
+        "PM2.5": pm25,
+        "PM10": pm10
+    }])
+    
+    return df
+
+if __name__ == "__main__":
+    YOUR_TOKEN = "ใส่โทเค็นของคุณที่นี่"
+    df_aqi = fetch_aqi_bangkok(YOUR_TOKEN)
+    print(df_aqi)
+```
+
+ 
  
 
 ## **อภิปรายสรุป (Wrap-up Discussion) – 5 นาที**
