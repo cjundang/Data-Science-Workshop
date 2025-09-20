@@ -82,249 +82,366 @@
 4. **Evaluation:** MAE, RMSE, R² + Residual Plot
 5. **Interpretation:** ตีความเชิงธุรกิจ (เช่น อากาศร้อน + งบโปรสูง = ยอดขายพุ่ง)
 
-
-## Case 2: ทำนายการสมัครใช้งานแอป (Signup Conversion)
-
-**เป้าหมาย**
-
-ทำนายว่า session นี้ สมัครใช้งานสำเร็จ (1) หรือไม่ (0)
-
-**ข้อมูล (พร้อมใช้)**
-- ฟีเจอร์: session_duration_s, pages_viewed, device(mobile/desktop/tablet), referral(ads/seo/email/direct), country(TH/VN/ID/SG), is_weekend, clicks_cta, returning_user
-- เลเบล: signed_up ∈ {0,1}
-- ขนาดตัวอย่าง: 2,000 แถว
-
-**เมตริกที่ใช้**
-- Accuracy, Precision/Recall/F1, และ ROC-AUC
-
-**แนววิเคราะห์**
-1. EDA: อัตรา signup โดย device/referral, distribution ของเวลาบนหน้า, correlation ระหว่างเชิงปริมาณ
-2. Baseline: ทายคลาสที่มากสุด
-3. โมเดล: Logistic Regression (เริ่มต้น) → ลอง Tree/RandomForest + one-hot สำหรับตัวแปรหมวดหมู่
-4. ประเมิน: Confusion Matrix, ROC-AUC, วิเคราะห์ threshold (Precision-Recall trade-off)
-
-
-### Regression (Linear Regression)
-```python 
+```python
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-df = pd.read_csv("icecream_sales_regression.csv", parse_dates=["date_index"])
+# -----------------------------
+# 1. สร้างข้อมูลสมมุติ (200 records)
+# -----------------------------
+np.random.seed(42)
+n = 200
+date_index = pd.date_range("2023-01-01", periods=n, freq="D")
 
-X = df[["temperature_C","humidity_pct","is_weekend","is_holiday",
-        "promo_budget_thb","foot_traffic","prior_day_sales","month"]]
+temperature = np.random.normal(30, 5, n)          # อุณหภูมิ (°C)
+humidity = np.random.uniform(40, 90, n)           # ความชื้น (%)
+month = date_index.month
+is_weekend = (date_index.weekday >= 5).astype(int)
+is_holiday = np.random.binomial(1, 0.1, n)        # 10% เป็นวันหยุดพิเศษ
+promo_budget = np.random.choice([0, 500, 1000, 2000], n, p=[0.4, 0.3, 0.2, 0.1])
+foot_traffic = np.random.poisson(lam=200, size=n) # จำนวนลูกค้าเข้าร้าน
+prior_day_sales = np.random.normal(5000, 1000, n)
+
+# ฟังก์ชันสร้างยอดขายจริง (target)
+sales = (
+    2000
+    + temperature * 120
+    - humidity * 15
+    + promo_budget * 1.5
+    + foot_traffic * 10
+    + prior_day_sales * 0.4
+    + is_weekend * 500
+    + is_holiday * 1000
+    + np.random.normal(0, 800, n)  # noise
+)
+
+df = pd.DataFrame({
+    "date_index": date_index,
+    "temperature_C": temperature,
+    "humidity_pct": humidity,
+    "month": month,
+    "is_weekend": is_weekend,
+    "is_holiday": is_holiday,
+    "promo_budget_thb": promo_budget,
+    "foot_traffic": foot_traffic,
+    "prior_day_sales": prior_day_sales,
+    "sales_thb": sales
+})
+
+print(df.head())
+
+# -----------------------------
+# 2. EDA เบื้องต้น
+# -----------------------------
+plt.figure(figsize=(10,4))
+df["sales_thb"].hist(bins=20)
+plt.title("Distribution of Daily Ice Cream Sales")
+plt.xlabel("Sales (THB)")
+plt.ylabel("Frequency")
+plt.show()
+
+plt.scatter(df["temperature_C"], df["sales_thb"], alpha=0.6)
+plt.title("Temperature vs Sales")
+plt.xlabel("Temperature (°C)")
+plt.ylabel("Sales (THB)")
+plt.show()
+
+plt.scatter(df["foot_traffic"], df["sales_thb"], alpha=0.6, color="orange")
+plt.title("Foot Traffic vs Sales")
+plt.xlabel("Foot Traffic")
+plt.ylabel("Sales (THB)")
+plt.show()
+
+# -----------------------------
+# 3. สร้างโมเดล (Baseline vs Linear Regression)
+# -----------------------------
+X = df[["temperature_C","humidity_pct","month","is_weekend","is_holiday",
+        "promo_budget_thb","foot_traffic","prior_day_sales"]]
 y = df["sales_thb"]
 
-Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
 
-lr = LinearRegression().fit(Xtr, ytr)
-yp = lr.predict(Xte)
+# baseline = ค่าเฉลี่ย
+baseline_pred = np.repeat(y_train.mean(), len(y_test))
 
-print("MAE:", mean_absolute_error(yte, yp))
-print("RMSE:", mean_squared_error(yte, yp, squared=False))
-print("R^2:", r2_score(yte, yp))
+# Linear Regression
+lr = LinearRegression()
+lr.fit(X_train, y_train)
+y_pred = lr.predict(X_test)
+
+# -----------------------------
+# 4. การประเมิน
+# -----------------------------
+def evaluate(y_true, y_pred, model_name):
+    mae = mean_absolute_error(y_true, y_pred)
+    rmse = np.sqrt(mean_squared_error(y_true, y_pred))
+    r2 = r2_score(y_true, y_pred)
+    print(f"{model_name} -> MAE: {mae:.2f}, RMSE: {rmse:.2f}, R²: {r2:.3f}")
+
+evaluate(y_test, baseline_pred, "Baseline")
+evaluate(y_test, y_pred, "Linear Regression")
+
+# -----------------------------
+# 5. Residual Plot
+# -----------------------------
+residuals = y_test - y_pred
+plt.scatter(y_pred, residuals, alpha=0.6)
+plt.axhline(0, color='red', linestyle='--')
+plt.title("Residual Plot")
+plt.xlabel("Predicted Sales")
+plt.ylabel("Residuals")
+plt.show()
 ```
 
-### Classification (Logistic Regression)
+
+## Case 2: Signup Conversion Prediction
+
+### 1. เป้าหมาย (Objective)
+
+* ทำนายว่าผู้ใช้ใน session จะ **สมัครใช้งาน (signed\_up=1)** หรือไม่ (signed\_up=0)
+* ใช้ฟีเจอร์ด้านพฤติกรรมการใช้งาน, แหล่ง referral, device และสถานะผู้ใช้
+
+
+
+### 2. ข้อมูล (Dataset)
+
+* **Features (X):**
+
+  * *session\_duration\_s:* เวลาที่อยู่ใน session
+  * *pages\_viewed:* จำนวนหน้าที่เปิด
+  * *device:* mobile/desktop/tablet
+  * *referral:* ads/seo/email/direct
+  * *country:* TH/VN/ID/SG
+  * *is\_weekend:* วันหยุดหรือไม่
+  * *clicks\_cta:* จำนวนครั้งที่กดปุ่ม call-to-action
+  * *returning\_user:* เคยมาใช้งานมาก่อนหรือไม่
+
+* **Label (y):** `signed_up ∈ {0,1}`
+
+* **Sample size:** 2,000 records
+
+### 3. การวิเคราะห์เบื้องต้น (EDA)
+
+1. **Rate ของการสมัครใช้งาน (conversion rate):**
+
+   * แบ่งตาม `device` → mobile อาจสมัครน้อยกว่า desktop
+   * แบ่งตาม `referral` → traffic จาก email/ads มัก conversion สูงกว่า direct
+2. **Distribution:**
+
+   * *session\_duration\_s:* อาจ skew (ส่วนใหญ่ใช้เวลาสั้น, บางรายอยู่นานมาก)
+   * *pages\_viewed:* ตรวจว่าหน้าเยอะสัมพันธ์กับ signup หรือไม่
+3. **Correlation:**
+
+   * `clicks_cta` และ `session_duration_s` มักมี positive correlation กับการ signup
+
+
+### 4. Baseline Model
+
+* **Predict majority class:** เช่น ถ้า 70% ของ session ไม่สมัคร → baseline accuracy = 70%
+* ใช้เปรียบเทียบกับโมเดลจริงว่าดีกว่าการทายแบบ “เดาสุ่ม” หรือไม่
+
+
+
+### 5. โมเดล (Modeling Strategy)
+
+1. **Logistic Regression (เริ่มต้น):**
+
+   * One-hot encode categorical features (device, referral, country)
+   * ตีความ coefficient เป็น log-odds → เข้าใจได้ว่า feature ไหนเพิ่มโอกาส signup
+
+2. **Tree-based (Decision Tree / Random Forest):**
+
+   * รองรับ non-linearity และ interaction ระหว่างฟีเจอร์
+   * ตีความง่ายด้วย feature importance
+
+### 6. การประเมิน (Evaluation)
+
+* **Confusion Matrix:** แสดง TP, TN, FP, FN
+* **Accuracy:** วัดการทำนายถูกโดยรวม (ดีเมื่อ class balance)
+* **Precision:** สัดส่วน signup ที่ทำนายว่า signup แล้วถูกต้องจริง
+* **Recall:** สัดส่วน signup จริงที่ถูกจับได้
+* **F1-score:** สมดุลระหว่าง Precision และ Recall
+* **ROC-AUC:** ความสามารถแยก positive/negative โดยไม่ขึ้นกับ threshold
+
+เพิ่มเติม:
+
+* **Threshold analysis:** เลือก threshold ที่เหมาะสมขึ้นกับ business goal เช่น
+
+  * ถ้าอยาก “ลด false positive” (ไม่อยากตามลูกค้าที่ไม่สมัครจริง) → เน้น **Precision**
+  * ถ้าอยาก “จับลูกค้าสมัครให้ครบ” → เน้น **Recall**
+
+
+
+### 7. การแปลผลเชิงความหมาย (Interpretation)
+
+* ถ้า **Accuracy = 85%** แต่ dataset imbalance (90% ไม่สมัคร, 10% สมัคร) → อาจไม่ดีนัก ต้องดู Precision/Recall ด้วย
+* ถ้า **Precision = 0.80, Recall = 0.60** → 80% ของที่โมเดลบอกว่าสมัครจริงสมัครจริง แต่จับลูกค้าสมัครมาได้แค่ 60%
+* ถ้า **F1 = 0.69** → สมดุลกลาง ๆ ระหว่าง Precision และ Recall
+* ถ้า **AUC = 0.90** → โมเดลแยก “signup vs not signup” ได้ดีมาก
+
+
+### 🔹 สรุป Workflow
+
+1. **EDA:** Conversion rate ตาม device/referral/country, distribution ของ session duration, correlation ของเชิงปริมาณ
+2. **Baseline:** ทาย majority class
+3. **Model:** Logistic Regression (เริ่มต้น) → Tree/Random Forest พร้อม one-hot encoding
+4. **Evaluation:** Confusion Matrix, Accuracy, Precision, Recall, F1, ROC-AUC
+5. **Threshold tuning:** วิเคราะห์ Precision-Recall trade-off
+6. **Interpretation:**
+
+   * Logistic: coefficient/log-odds แปลตรงไปตรงมา (เช่น `clicks_cta` +1 → โอกาสสมัครเพิ่ม)
+   * Tree/Forest: ใช้ feature importance ดูปัจจัยที่สำคัญที่สุดต่อ signup
+
 ```python
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support, roc_auc_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import (
+    accuracy_score, precision_score, recall_score, f1_score,
+    roc_auc_score, confusion_matrix, roc_curve
+)
 
-df = pd.read_csv("app_signup_classification.csv")
+# -----------------------------
+# 1. สร้างข้อมูลสมมุติ
+# -----------------------------
+np.random.seed(42)
+n = 2000
 
-num_cols = ["session_duration_s","pages_viewed","clicks_cta","is_weekend","returning_user"]
-cat_cols = ["device","referral","country"]
+session_duration = np.random.exponential(scale=120, size=n)   # วินาที
+pages_viewed = np.random.poisson(lam=4, size=n)
+device = np.random.choice(["mobile", "desktop", "tablet"], size=n, p=[0.6, 0.3, 0.1])
+referral = np.random.choice(["ads", "seo", "email", "direct"], size=n, p=[0.3, 0.3, 0.2, 0.2])
+country = np.random.choice(["TH", "VN", "ID", "SG"], size=n, p=[0.4, 0.2, 0.3, 0.1])
+is_weekend = np.random.binomial(1, 0.3, size=n)
+clicks_cta = np.random.poisson(lam=1, size=n)
+returning_user = np.random.binomial(1, 0.4, size=n)
 
-X = df[num_cols + cat_cols]
+# target: signed_up
+# โมเดลกำหนดโอกาสสมัครจากบาง feature
+logits = (
+    0.001*session_duration
+    + 0.2*pages_viewed
+    + 0.5*clicks_cta
+    + 0.8*returning_user
+    + np.where(device=="desktop", 0.5, 0)
+    + np.where(referral=="email", 0.7, 0)
+    + np.where(is_weekend==1, -0.2, 0)
+)
+prob = 1 / (1 + np.exp(-logits))
+signed_up = np.random.binomial(1, prob)
+
+df = pd.DataFrame({
+    "session_duration_s": session_duration,
+    "pages_viewed": pages_viewed,
+    "device": device,
+    "referral": referral,
+    "country": country,
+    "is_weekend": is_weekend,
+    "clicks_cta": clicks_cta,
+    "returning_user": returning_user,
+    "signed_up": signed_up
+})
+
+print(df.head())
+
+# -----------------------------
+# 2. Train/Test Split
+# -----------------------------
+X = df.drop("signed_up", axis=1)
 y = df["signed_up"]
 
-pre = ColumnTransformer([
-    ("cat", OneHotEncoder(handle_unknown="ignore"), cat_cols),
-    ("num", "passthrough", num_cols)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# -----------------------------
+# 3. Preprocessing + Models
+# -----------------------------
+categorical = ["device", "referral", "country"]
+numeric = ["session_duration_s", "pages_viewed", "clicks_cta", "is_weekend", "returning_user"]
+
+preprocessor = ColumnTransformer([
+    ("cat", OneHotEncoder(drop="first"), categorical),
+    ("num", "passthrough", numeric)
 ])
 
-clf = Pipeline([
-    ("pre", pre),
-    ("logit", LogisticRegression(max_iter=1000))
+# Logistic Regression pipeline
+log_reg = Pipeline([
+    ("preprocessor", preprocessor),
+    ("classifier", LogisticRegression(max_iter=1000))
 ])
 
-Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
-clf.fit(Xtr, ytr)
-
-yp = clf.predict(Xte)
-yp_prob = clf.predict_proba(Xte)[:,1]
-
-acc = accuracy_score(yte, yp)
-prec, rec, f1, _ = precision_recall_fscore_support(yte, yp, average="binary", zero_division=0)
-auc = roc_auc_score(yte, yp_prob)
-
-print(f"ACC={acc:.3f}, P={prec:.3f}, R={rec:.3f}, F1={f1:.3f}, AUC={auc:.3f}")
-```
-
-
-
-### กรอบแนวคิด
-
-Key message → Evidence → Visual → Annotation → Decision
-1. นิยาม “ประเด็นหลัก (Key message)” ให้ชัดเจน
-2. เลือกกราฟที่ “รองรับข้อความนั้น” โดยตรง
-3. ลดสิ่งรบกวน (declutter) และ ไฮไลต์ จุดสำคัญ
-4. ปิดท้ายด้วย ข้อเสนอการตัดสินใจ และความเสี่ยง
-
-
-### A) กรณี Regression: ยอดขายไอศกรีม (Ice-cream Sales)
-
-1) ข้อความหลัก (ตัวอย่าง)
-	- “สุดสัปดาห์/วันหยุด ทำให้ยอดขายเฉลี่ยเพิ่มขึ้นอย่างมีนัยสำคัญ และยอดขายสูงสุดเกิดในช่วงอุณหภูมิใกล้ ~33 °C (ร้อนเกินไปยอดขายเริ่มลด)”
-
-2) รูปช่วยเล่าเรื่อง (แนะนำ)
-	- Bar chart: ยอดขายเฉลี่ยแยกตาม is_weekend, is_holiday (เห็น uplift ชัดเจน)
-	- Scatter + เส้นโค้งกำลังสอง: temperature_C vs sales_thb เพื่อสื่อ “จุดเหมาะสม” ของอุณหภูมิ
-
-3) โค้ด (Notebook-ready; ใช้ matplotlib ทั้งหมด)
-```python
-import pandas as pd, numpy as np
-import matplotlib.pyplot as plt
-
-# 0) โหลดข้อมูล
-df = pd.read_csv("icecream_sales_regression.csv", parse_dates=["date_index"])
-
-# 1) Bar: ยอดขายเฉลี่ยแยก weekend/holiday
-grp = df.groupby(["is_weekend","is_holiday"])["sales_thb"].mean().reset_index()
-labels = ["Wknd0-Hol0","Wknd1-Hol0","Wknd0-Hol1","Wknd1-Hol1"]
-x = np.arange(len(labels))
-vals = [
-    grp[(grp.is_weekend==0)&(grp.is_holiday==0)]["sales_thb"].values[0],
-    grp[(grp.is_weekend==1)&(grp.is_holiday==0)]["sales_thb"].values[0],
-    grp[(grp.is_weekend==0)&(grp.is_holiday==1)]["sales_thb"].values[0],
-    grp[(grp.is_weekend==1)&(grp.is_holiday==1)]["sales_thb"].values[0],
-]
-
-plt.figure(figsize=(6,4))
-plt.bar(x, vals)
-for i,v in enumerate(vals):
-    plt.text(i, v, f"{v:.0f}", ha="center", va="bottom")
-plt.xticks(x, labels)
-plt.title("Average Sales by Weekend/Holiday")
-plt.xlabel("Group"); plt.ylabel("Avg Sales (THB)")
-plt.show()
-
-# 2) Scatter + โค้งกำลังสอง: อุณหภูมิกับยอดขาย
-T = df["temperature_C"].values
-Y = df["sales_thb"].values
-coef = np.polyfit(T, Y, 2)          # fit โค้ง 2nd degree
-poly = np.poly1d(coef)
-T_line = np.linspace(T.min(), T.max(), 200)
-Y_line = poly(T_line)
-
-# จุดยอดของพาราโบลา (vertex) = -b/(2a)
-a,b,c = coef
-T_opt = -b/(2*a); Y_opt = poly(T_opt)
-
-plt.figure(figsize=(6,4))
-plt.scatter(T, Y, s=10, alpha=0.6)
-plt.plot(T_line, Y_line)
-plt.scatter([T_opt], [Y_opt], s=50)
-plt.annotate(f"Sweet spot ≈ {T_opt:.1f}°C",
-             xy=(T_opt, Y_opt), xytext=(T_opt+0.5, Y_opt+150),
-             arrowprops=dict(arrowstyle="->"))
-plt.title("Temperature vs Sales with Quadratic Fit")
-plt.xlabel("Temperature (°C)"); plt.ylabel("Sales (THB)")
-plt.show()
-```
-
-4) ประโยคสรุปบนสไลด์ (ตัวอย่าง)
-	- “ขายดีขึ้นชัดเจนใน ส–อา และวันหยุด (+xxx บาทเฉลี่ย/วัน) → ควรเพิ่มสต็อก/พนักงานช่วงดังกล่าว”
-	- “ยอดขายสูงสุดใกล้ ~33 °C → แนะนำแคมเปญเมื่อพยากรณ์อากาศเข้าโซนนี้”
-
-## B) กรณี Classification: สมัครใช้งานแอป (App Signup Conversion)
-
-1) ข้อความหลัก (ตัวอย่าง)
-	- “เวอร์ชันปุ่ม B เพิ่ม CR เมื่อเทียบกับ A และโมเดล Logistic แยกคลาสได้ดี (ROC-AUC สูง) โดย SEO/ผู้ใช้เดิม มีโอกาสสมัครสูงกว่ากลุ่มอื่น”
-
-2) รูปช่วยเล่าเรื่อง (แนะนำ)
-	- Bar chart: Conversion rate ของ variant A vs B (ใส่ตัวเลขบนแท่ง)
-	- Confusion matrix (หลังตั้ง threshold มาตรฐาน 0.5) และ ROC curve (แสดง AUC)
-
-3) โค้ด (Notebook-ready)
-```python 
-import pandas as pd, numpy as np
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix, RocCurveDisplay, roc_auc_score
-
-# 0) โหลดข้อมูล
-df = pd.read_csv("app_signup_classification.csv")
-
-# 1) แสดง CR A vs B
-cr = df.groupby("referral")["signed_up"].mean()  # ตัวอย่าง insight อื่น
-tab = df.groupby("device")["signed_up"].mean()
-
-cr_var = df.groupby(df.index // 1)  # placeholder ถ้าต้องการ per-session ไม่จำเป็น
-cr_AB = df.assign(variant=np.where(np.random.rand(len(df))<0.5,"A","B")) \
-          .groupby("variant")["signed_up"].mean()
-
-labels = list(cr_AB.index); vals = [100*v for v in cr_AB.values]  # %
-x = np.arange(len(labels))
-plt.figure(figsize=(5,4))
-plt.bar(x, vals)
-for i,v in enumerate(vals):
-    plt.text(i, v, f"{v:.1f}%", ha="center", va="bottom")
-plt.xticks(x, labels)
-plt.ylabel("Conversion Rate (%)"); plt.title("CR by Variant")
-plt.show()
-
-# 2) โมเดล + ROC/Confusion
-num = ["session_duration_s","pages_viewed","clicks_cta","is_weekend","returning_user"]
-cat = ["device","referral","country"]
-X = df[num+cat]; y = df["signed_up"]
-
-pipe = Pipeline([
-    ("prep", ColumnTransformer([
-        ("cat", OneHotEncoder(handle_unknown="ignore"), cat),
-        ("num", "passthrough", num)
-    ])),
-    ("clf", LogisticRegression(max_iter=1000))
+# Random Forest pipeline
+rf = Pipeline([
+    ("preprocessor", preprocessor),
+    ("classifier", RandomForestClassifier(n_estimators=100, random_state=42))
 ])
 
-Xtr, Xte, ytr, yte = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
-pipe.fit(Xtr, ytr)
-proba = pipe.predict_proba(Xte)[:,1]
-pred = (proba>=0.5).astype(int)
+# -----------------------------
+# 4. Baseline
+# -----------------------------
+baseline_pred = np.repeat(y_train.mode()[0], len(y_test))
 
-# Confusion matrix
-cm = confusion_matrix(yte, pred)
-plt.figure(figsize=(4,4))
-plt.imshow(cm, cmap="Blues")
-for i in range(2):
-    for j in range(2):
-        plt.text(j, i, cm[i,j], ha="center", va="center")
-plt.xticks([0,1], ["Pred 0","Pred 1"])
-plt.yticks([0,1], ["True 0","True 1"])
-plt.title("Confusion Matrix (Threshold=0.5)")
+# -----------------------------
+# 5. Training
+# -----------------------------
+log_reg.fit(X_train, y_train)
+rf.fit(X_train, y_train)
+
+y_pred_log = log_reg.predict(X_test)
+y_prob_log = log_reg.predict_proba(X_test)[:,1]
+
+y_pred_rf = rf.predict(X_test)
+y_prob_rf = rf.predict_proba(X_test)[:,1]
+
+# -----------------------------
+# 6. Evaluation Function
+# -----------------------------
+def evaluate(y_true, y_pred, y_prob, model_name):
+    acc = accuracy_score(y_true, y_pred)
+    prec = precision_score(y_true, y_pred)
+    rec = recall_score(y_true, y_pred)
+    f1 = f1_score(y_true, y_pred)
+    auc = roc_auc_score(y_true, y_prob)
+    print(f"{model_name}:")
+    print(f" Accuracy={acc:.3f}, Precision={prec:.3f}, Recall={rec:.3f}, F1={f1:.3f}, ROC-AUC={auc:.3f}")
+    print("-"*50)
+
+evaluate(y_test, baseline_pred, np.zeros(len(y_test)), "Baseline")
+evaluate(y_test, y_pred_log, y_prob_log, "Logistic Regression")
+evaluate(y_test, y_pred_rf, y_prob_rf, "Random Forest")
+
+# -----------------------------
+# 7. Confusion Matrix
+# -----------------------------
+cm = confusion_matrix(y_test, y_pred_rf)
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Not Signup","Signup"], yticklabels=["Not Signup","Signup"])
+plt.title("Confusion Matrix (Random Forest)")
+plt.ylabel("True Label")
+plt.xlabel("Predicted Label")
 plt.show()
 
-# ROC
-RocCurveDisplay.from_predictions(yte, proba)
-auc = roc_auc_score(yte, proba)
-plt.title(f"ROC Curve (AUC = {auc:.3f})")
+# -----------------------------
+# 8. ROC Curve
+# -----------------------------
+fpr, tpr, _ = roc_curve(y_test, y_prob_rf)
+plt.plot(fpr, tpr, label="Random Forest")
+fpr2, tpr2, _ = roc_curve(y_test, y_prob_log)
+plt.plot(fpr2, tpr2, label="Logistic Regression")
+plt.plot([0,1],[0,1],'k--')
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+plt.legend()
 plt.show()
 ```
-
-4) ประโยคสรุปบนสไลด์ (ตัวอย่าง)
-	- “B ชนะ A (CR สูงกว่า X.X จุดร้อยละ); โมเดลช่วยบ่งกลุ่มโอกาสสูง (AUC ≈ 0.8+) → โฟกัส SEO/ผู้ใช้เดิม”
-	- “คำแนะนำ: Rollout แบบ phased + เฝ้าระวัง guardrails (เช่น complaint rate)”
-
-
-
