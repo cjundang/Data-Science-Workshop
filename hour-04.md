@@ -54,6 +54,68 @@ Regression คือกระบวนการสร้างแบบจำล
   * ใช้ **RMSE** ถ้าอยากให้ความสำคัญกับ error ขนาดใหญ่
   * ใช้ **\$R^2\$** ถ้าอยากดูว่าสัดส่วนความแปรปรวนที่อธิบายได้มากน้อยแค่ไหน
  
+เข้าใจครับ ✅ ผมจะจัดคำตอบเป็น 2 ส่วนเหมือนกับของ Regression:
+
+1. **ภาพรวมของ Classification** → คำอธิบาย, การประเมิน, การแปลผลเชิงความหมาย
+2. **ตารางสรุปรายละเอียดของแต่ละอัลกอริทึม** (ชื่อ | ทฤษฎี | การแปลผล | การประเมินที่เหมาะสม)
+
+---
+
+### 2. Classification
+
+Classification คือปัญหาที่โมเดลต้อง **ทำนายคลาส (class/label)** ของข้อมูล เช่น email = spam / not spam, ผู้ป่วย = ป่วย / ไม่ป่วย โดยโมเดลเรียนรู้ **boundary** หรือ **probability distribution** ของคลาสจากข้อมูลฝึก (training set)
+
+อัลกอริทึมต่าง ๆ มีพื้นฐานต่างกัน เช่น
+* **Linear models (Logistic Regression, Linear SVM):** หาขอบเขตเส้นตรง
+* **Tree-based (Decision Tree, Random Forest, Boosting):** หากฎเชิงเงื่อนไข
+* **Instance-based (KNN):** ใช้ความใกล้เคียงของข้อมูล
+* **Probabilistic (Naïve Bayes):** อิงกฎ Bayes
+* **Neural Networks:** สร้าง decision boundary ซับซ้อน
+
+**การประเมิน (Evaluation Metrics)**
+
+ขึ้นกับความสมดุลของข้อมูล (class balance):
+
+* **Accuracy**: สัดส่วนทำนายถูก → เหมาะเมื่อ class balance
+* **Precision**: สัดส่วนทำนาย Positive ที่ถูกต้อง → เหมาะในกรณีต้องลด False Positive เช่น Spam Detection
+* **Recall**: สัดส่วน Positive ที่ถูกจับได้ → เหมาะในกรณีต้องลด False Negative เช่น การแพทย์ (ห้ามพลาดผู้ป่วยจริง)
+* **F1-score**: ค่าเฉลี่ยเชิงฮาร์โมนิกของ Precision และ Recall → ใช้เมื่อ class imbalance
+* **Confusion Matrix**: ตารางสรุปผลทำนาย TP, FP, TN, FN
+* **ROC-AUC**: วัดคุณภาพการแยกคลาสโดยไม่ขึ้นกับ threshold
+
+**การแปลผลเชิงความหมาย**
+
+* ถ้า **Accuracy = 95%** → ดีถ้า class balance, แต่ถ้า imbalance เช่น 95% = Negative, ทำนาย “Negative เสมอ” ก็ได้ Accuracy 95% เช่นกัน
+* ถ้า **Precision = 90%** → แปลว่าในผลที่โมเดลทำนายว่า “Positive” มี 90% ที่ถูกต้องจริง
+* ถ้า **Recall = 90%** → แปลว่าโมเดลสามารถตรวจจับ Positive จริงได้ 90%
+* ถ้า **F1 = 0.88** → โมเดลมีสมดุลที่ดีระหว่าง Precision และ Recall
+* ถ้า **AUC = 0.95** → โมเดลแยก positive กับ negative ได้ดีมาก (ใกล้ 1 = ยอดเยี่ยม, 0.5 = เดาสุ่ม)
+
+**ตารางสรุป Classification Algorithms**
+
+| **ชื่อ**                                            | **ทฤษฎี (หลักการสำคัญ)**                                       | **การแปลผล (Interpretation)**                                       | **การประเมินที่เหมาะสม**                                             |                                          |
+| --------------------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------- |
+| **Logistic Regression**                             | สร้างสมการเชิงเส้นแล้วผ่าน sigmoid เพื่อให้ได้ \$P(Y=1         | x)\$                                                                | ค่าสัมประสิทธิ์ = log-odds ของการเป็นคลาสเป้าหมาย → แปลได้ตรงไปตรงมา | Accuracy, Precision, Recall, F1, ROC-AUC |
+| **Naïve Bayes**                                     | ใช้กฎ Bayes โดยสมมติว่า features เป็นอิสระต่อกัน               | ค่า posterior probability แสดงความเชื่อมั่นว่าข้อมูลอยู่ในคลาสใด    | Accuracy, Precision, Recall, F1 (ดีในงาน text classification)        |                                          |
+| **K-Nearest Neighbors (KNN)**                       | ทำนายคลาสจากคลาสของเพื่อนบ้าน \$k\$ จุดที่ใกล้ที่สุด           | เข้าใจง่าย → “สิ่งที่คล้ายกันจะอยู่คลาสเดียวกัน”                    | Accuracy, F1 (sensitive ต่อ imbalance), ROC-AUC                      |                                          |
+| **Support Vector Machine (SVM)**                    | หาขอบเขต (hyperplane) ที่ maximize margin ระหว่างคลาส          | ตีความยากใน high dimension แต่ boundary ชัดเจน                      | Accuracy, Precision, Recall, F1, ROC-AUC                             |                                          |
+| **Decision Tree**                                   | แบ่งข้อมูลตาม feature ที่ลด impurity มากที่สุด (Gini/Entropy)  | แปลเป็นกฎ IF-THEN ได้ง่าย เช่น “ถ้าอายุ < 30 และรายได้สูง → คลาส A” | Accuracy, Precision, Recall, F1 (ดู Confusion Matrix)                |                                          |
+| **Random Forest**                                   | สร้างหลาย tree แบบสุ่มแล้วโหวต → ลด overfitting                | ใช้ Feature Importance อธิบายได้ว่าตัวแปรใดมีผลมากที่สุด            | Accuracy, F1, ROC-AUC                                                |                                          |
+| **Gradient Boosting (XGBoost, LightGBM, CatBoost)** | สร้าง tree ต่อเนื่อง แก้ error ของ tree ก่อนหน้า               | ใช้ SHAP values อธิบายผลลัพธ์และความสำคัญของ features               | Accuracy, F1, ROC-AUC (นิยมใน Kaggle)                                |                                          |
+| **Neural Networks (MLP, CNN, RNN, Transformers)**   | ใช้โครงข่าย neuron ซับซ้อน สร้าง decision boundary ที่ยืดหยุ่น | ตีความยาก (black-box) → ใช้ LIME/SHAP ช่วยตีความ                    | Accuracy, F1, ROC-AUC (เหมาะกับงานภาพ เสียง ข้อความ)                 |                                          |
+
+
+
+**สรุปเชิงภาพรวม**
+
+* ถ้า **ต้องการตีความง่าย** → Logistic Regression, Decision Tree
+* ถ้า **ต้องการความแม่นยำสูง** → Ensemble (Random Forest, Gradient Boosting), Neural Networks
+* **การเลือก metric:**
+
+  * ใช้ **Accuracy** ถ้า class balance
+  * ใช้ **Precision/Recall/F1** ถ้า class imbalance
+  * ใช้ **ROC-AUC** ถ้าต้องการดูความสามารถในการแยกคลาสโดยไม่ขึ้นกับ threshold
+
 
 
 
